@@ -22,8 +22,8 @@ class ProductsList extends React.Component {
     this.getProducts()
   }
   render() {
-    const products = this.state.products.map((product, i) => {
-      return <Product key={i} product={product} />
+    const products = this.state.products.map(product => {
+      return <Product key={product.id} product={product} />
     })
   	return (
   	    <div className="ProductsList">
