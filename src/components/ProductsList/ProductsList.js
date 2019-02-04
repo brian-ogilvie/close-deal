@@ -42,8 +42,10 @@ class ProductsList extends React.Component {
     })
   	return (
   	    <div className="ProductsList">
-          <h2>Items for sale in New York</h2>
-          <SearchBar filterProducts={this.filterProducts} />
+          <div className="ProductsList__top-line">
+            <h2 className="ProductsList__heading">Items for sale in New York</h2>
+            <SearchBar filterProducts={this.filterProducts} />
+          </div>
           <div className="ProductsList__list">
             {products}
           </div>
