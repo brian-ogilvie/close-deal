@@ -24,7 +24,7 @@
     "db:init": "dropdb --if-exists shopping_app_db && createdb shopping_app_db",
     "db:reset": "node ./scripts/resetDb",
     "db:seed": "node ./scripts/seed",
-    "server": "nodemon server",
+    "server": "nodemon server.js",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"react-scripts start\"",
     "start": "concurrently --kill-others-on-fail \"node server.js\" \"react-scripts start\""
   },
