@@ -4,10 +4,21 @@
   left: 0;
   right: 0;
   padding: 10px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,.8);
+}
+
+header {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.Header__logo {
+  margin: 0;
 }
 
 .Header__nav {

@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import Product from '../Product/Product'
+import './ProductsList.css'
 
 class ProductsList extends React.Component {
   constructor() {
