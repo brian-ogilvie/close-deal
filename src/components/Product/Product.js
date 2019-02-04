@@ -2,7 +2,6 @@ import React from "react"
 import "./Product.css"
 
 const Product = ({product}) => {
-  console.log(product);
 
 const imageInlineStyle = {backgroundImage:`url(${product.image_url})`}
 
