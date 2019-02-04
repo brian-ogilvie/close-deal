@@ -1,0 +1,32 @@
+.Header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Header__nav {
+  list-style: none;
+  padding: 0;
+}
+
+.Header__nav-item {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+.Header__nav-link {
+  text-decoration: none;
+  color: red;
+  border-bottom: 1px solid transparent;
+  transition: all .3s;
+}
+
+.Header__nav-link:hover {
+  border-bottom: 1px solid black;
+}
