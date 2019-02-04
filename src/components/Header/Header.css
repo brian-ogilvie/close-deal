@@ -4,8 +4,9 @@
   left: 0;
   right: 0;
   padding: 10px;
-  background-color: white;
+  background-color: #727072;
   box-shadow: 0 2px 4px rgba(0,0,0,.8);
+  color: white;
 }
 
 header {
@@ -28,12 +29,13 @@ header {
 
 .Header__nav-item {
   display: inline-block;
+  font-size: 1.3rem;
   margin: 0 15px;
 }
 
 .Header__nav-link {
   text-decoration: none;
-  color: red;
+  color: white;
   border-bottom: 1px solid transparent;
   transition: all .3s;
 }
