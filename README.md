@@ -1,5 +1,5 @@
 # Project 3, Shopping App
-The Shopping App is a cone of Etsy, or LetGo, where user can post items for sale, browse other products for sale by users, post reviews on products, and add products to their shopping cart.
+The Shopping App is a clone of Etsy, or LetGo, where user can post items for sale, browse other products for sale by users, post reviews on products, and add products to their shopping cart.
 
 ## Installation
 - Fork and clone this repository
