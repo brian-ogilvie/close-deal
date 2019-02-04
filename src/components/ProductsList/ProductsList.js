@@ -27,7 +27,7 @@ class ProductsList extends React.Component {
     })
   	return (
   	    <div className="ProductsList">
-          <h1>Products List</h1>
+          <h2>Items for sale in New York</h2>
           <div className="ProductsList__list">
             {products}
           </div>
