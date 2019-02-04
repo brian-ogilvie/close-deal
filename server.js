@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
 
 app.get('/products', async(req,res) => {
 	try{
-		const products = await Product.findAll({raw:true})
+		const products = await Product.findAll()
 		res.json({products})
 	} catch(e){
 		res.status(500).json({message: e.message})
@@ -18,7 +18,7 @@ app.get('/products', async(req,res) => {
 
 app.get('/products/:id', async (req, res) => {
   try {
-    const product = await Product.findByPk(req.params.id, {raw:true})
+    const product = await Product.findByPk(req.params.id)
     if (!product) throw Error('Product not found!')
     res.json({ product })
   } catch(e) {
