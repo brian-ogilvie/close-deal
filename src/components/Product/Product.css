@@ -1,0 +1,10 @@
+.Product {
+  background-color: gray;
+  width: 220px;
+  border: 1px solid gray;
+  margin: 5px;
+}
+
+.Product img {
+  width: 100%;
+}

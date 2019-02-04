@@ -13,12 +13,14 @@ class Header extends React.Component {
   render() {
     return (
       <div className="Header">
-        <h1>Shopping App</h1>
-        <nav>
-          <ul className="Header__nav">
-            <li className="Header__nav-item"><Link className="Header__nav-link" to="/products">Products for Sale</Link></li>
-          </ul>
-        </nav>
+        <header>
+          <h1 className="Header__logo">Shopping App</h1>
+          <nav>
+            <ul className="Header__nav">
+              <li className="Header__nav-item"><Link className="Header__nav-link" to="/products">Products for Sale</Link></li>
+            </ul>
+          </nav>
+        </header>
       </div>
     )
   }
