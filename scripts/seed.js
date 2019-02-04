@@ -9,7 +9,7 @@ const seed = async () => {
 
     await User.bulkCreate([
       {email: 'brian@brianogilvie.com', first_name: 'Brian', last_name: 'Ogilvie', password: 'p0w3rt3@mRulez'},
-      {email: 'danial.kim@gmail.com', password: 'abc123', first_name: 'Daniel', last_name: 'Kim'},
+      {email: 'daniel.kim@gmail.com', password: 'abc123', first_name: 'Daniel', last_name: 'Kim'},
       {email: 'jose@cruz.net', password: 'abc123', first_name: 'Jose', last_name: 'Cruz'}
     ], {
       validate: true,
