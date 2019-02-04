@@ -4,6 +4,7 @@ import './App.css'
 
 import Header from '../Header/Header'
 import ProductsList from '../ProductsList/ProductsList'
+import CreateProductPage from '../CreateProductPage/CreateProductPage'
 
 class App extends Component {
   render() {
@@ -16,7 +17,7 @@ class App extends Component {
               return <Redirect to='/products' />
             }} />
             <Route path='/products' component={ ProductsList }/>
-            <Route path='/sell' component={ ProductsList }/>
+            <Route path='/sell' component={ CreateProductPage }/>
             <Route path='/profile' component={ ProductsList }/>
             <Route path='/login' component={ ProductsList }/>
           </Switch>
