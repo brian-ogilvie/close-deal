@@ -1,5 +1,6 @@
 import React from "react"
 import "./Product.css"
+import ProductDetail from "../ProductDetail/ProductDetail"
 
 const Product = ({product}) => {
 
@@ -18,6 +19,7 @@ const imageInlineStyle = {backgroundImage:`url(${product.image_url})`}
           <h4>${product.price}</h4>
         </div>
       </div>
+      <ProductDetail product={product} />
     </div>
   )
 }
