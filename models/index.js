@@ -61,7 +61,7 @@ const Review = db.define('review', {
   comment: Sequelize.TEXT,
 })
 
-const Purchase = db.define('purchase')
+const Transaction = db.define('transaction')
 
 User.hasMany(Product, {onDelete: 'cascade'})
 Product.belongsTo(User)
@@ -69,9 +69,9 @@ User.hasMany(Review, {onDelete: 'cascade'})
 Review.belongsTo(User)
 Product.hasMany(Review, {onDelete: 'cascade'})
 Review.belongsTo(Product)
-User.hasMany(Purchase, {onDelete: 'cascade'})
-Purchase.belongsTo(User)
-Purchase.belongsToMany(Product, {through: 'purchased_products'})
-Product.belongsToMany(Purchase, {through: 'purchased_products'})
+User.hasMany(Transaction, {onDelete: 'cascade'})
+Transaction.belongsTo(User)
+Transaction.belongsToMany(Product, {through: 'purchased_products'})
+Product.belongsToMany(Transaction, {through: 'purchased_products'})
 
-module.exports = {db, Op, User, Product, Review, Purchase}
+module.exports = {db, Op, User, Product, Review, Transaction}
