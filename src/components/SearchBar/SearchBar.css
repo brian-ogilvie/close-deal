@@ -1,0 +1,11 @@
+.SearchBar {
+  display: inline-block;
+}
+
+.SearchBar__input {
+  width: 300px;
+  font-size: 1rem;
+  border-radius: 5px;
+  padding: 5px;
+  text-align: left;
+}
