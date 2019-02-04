@@ -2,9 +2,43 @@
   background-color: gray;
   width: 220px;
   border: 1px solid gray;
-  margin: 5px;
+  margin: 2px;
+  text-align: center;
 }
 
-.Product img {
+.Product__image {
   width: 100%;
+  display: none;
+}
+
+.Product__img-wrapper {
+  overflow: hidden;
+  width: 220px;
+  height: 150px;
+  background-size: cover;
+  background-position: center center;
+}
+
+.Product__info-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 3px;
+  width: 100%;
+  height: 75px;
+  overflow: hidden;
+  align-items: center;
+}
+
+.Product__info-wrapper h4 {
+  margin: 0;
+}
+
+.Product__price-wrapper {
+  flex-basis: 20%;
+  text-align: right;
+}
+
+.Product__name-wrapper {
+  flex-basis: 80%;
+  text-align: left;
 }

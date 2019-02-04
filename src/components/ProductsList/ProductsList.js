@@ -34,6 +34,6 @@ class ProductsList extends React.Component {
         </div>
   	)
   }
-} 
+}
 
 export default ProductsList
