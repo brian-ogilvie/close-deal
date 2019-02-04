@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
+import './App.css'
 
-// import HomePage from '../HomePage';
-// import Product from '../Product';
 import Header from '../Header/Header'
+import ProductsList from '../ProductsList/ProductsList'
 
 class App extends Component {
   render() {
     return (
       <div className="container">
         <Header />
-        {/*<Switch>
-          <Route path='/' exact component={ HomePage }/>
-          <Route path='/product' component={ Product }/>
-        </Switch>*/}
+        <main>
+          <Switch>
+            <Route path='/products' component={ ProductsList }/>
+          </Switch>
+        </main>
       </div>
     );
   }
