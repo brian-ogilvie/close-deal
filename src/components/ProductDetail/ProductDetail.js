@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import "./ProductDetail.css"
+import Review from '../Review/Review'
 
 class ProductDetail extends Component {
   constructor() {
@@ -30,8 +31,9 @@ class ProductDetail extends Component {
 
   render() {
     const reviews = this.state.product.reviews
+    console.log(reviews)
     const productReviews = reviews && reviews.length > 0 ?reviews.map(review => {
-      return <div key={review.id}>{review.comment}</div>
+      return <Review key={review.id} review={review}/>
     }): <div></div>
     return(
       <div className="ProductDetail__container">
