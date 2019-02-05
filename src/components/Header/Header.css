@@ -4,8 +4,8 @@
   left: 0;
   right: 0;
   padding: 10px;
-  background-color: #727072;
-  box-shadow: 0 2px 4px rgba(0,0,0,.8);
+  background-color: #000000;
+  /* box-shadow: 0 2px 4px rgba(0,0,0,.8); */
   color: white;
 }
 
@@ -43,5 +43,5 @@ header {
 }
 
 .Header__nav-link:hover {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #B80C09;
 }

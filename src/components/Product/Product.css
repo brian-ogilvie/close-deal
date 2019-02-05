@@ -2,9 +2,13 @@
   background-color: #FFFBFE;
   width: 220px;
   margin: 5px 1% 10px;
-  box-shadow: 2px 2px 6px rgba(0,0,0,.8);
   border-radius: 8px;
   overflow: hidden;
+}
+
+.Product:hover {
+  box-shadow: 4px 4px 8px rgba(0,0,0,.8);
+  transition: all .3s;
 }
 
 .Product__image {
