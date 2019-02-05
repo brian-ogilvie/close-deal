@@ -6,8 +6,8 @@ import axios from 'axios'
 
 class SellProduct extends Component {
 
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     //sets the initial state via the constructor!
     this.state = {
       product: {
@@ -27,7 +27,8 @@ class SellProduct extends Component {
     	name: this.state.product.name,
       description: this.state.product.description,
     	price: this.state.product.price,
-    	image_url: this.state.product.image_url
+    	image_url: this.state.product.image_url,
+      user_id: this.props.user_id
     }
 
     await axios.post('/products', newProduct)

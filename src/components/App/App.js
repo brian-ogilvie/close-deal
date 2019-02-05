@@ -67,7 +67,7 @@ class App extends Component {
             }} />
             <Route path='/sell' render={()=>{
               if(this.state.user){
-                return <SellProduct />
+                return <SellProduct user_id={this.state.user.id}/>
               } else {
                 this.showLogin()
                 return <Redirect to='/products' />
