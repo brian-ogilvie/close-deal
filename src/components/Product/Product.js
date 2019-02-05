@@ -3,12 +3,11 @@ import "./Product.css"
 import { Link } from "react-router-dom"
 
 const Product = ({product}) => {
-console.log(product);
 const imageInlineStyle = {backgroundImage:`url(${product.image_url})`}
 
   return(
       <div className="Product">
-        <Link to={`/products/${product.id}`}>
+        <Link className="Product__link" to={`/products/${product.id}`}>
           <div className="Product__img-wrapper" style={imageInlineStyle}>
             <img className="Product__image"  src={product.image_url} alt = {product.name} />
           </div>
@@ -19,7 +18,7 @@ const imageInlineStyle = {backgroundImage:`url(${product.image_url})`}
             <div className="Product__price-wrapper">
               <h4>${product.price}</h4>
             </div>
-        </div>
+          </div>
         </Link>
       </div>
   )
