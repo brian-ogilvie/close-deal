@@ -1,6 +1,8 @@
 const express = require('express')
 const PORT = process.env.PORT || 5000
 const bodyParser = require('body-parser')
+const bcrypt = require('bcrypt')
+
 const app = express()
 
 app.use(bodyParser.json())
@@ -50,15 +52,17 @@ app.post('/users/login', async (req, res) => {
       }
     })
     if (!user) {
-      return res.json({user: null, loggedIn: false})
+      return res.status(400).json({user: null, loggedIn: false})
     } 
-    if (user.password !== req.body.password) {
-      return res.json({user: null, loggedIn: false})
+    const {first_name, last_name, email, id, password: hash} = user
+    const match = await bcrypt.compare(req.body.password, hash)
+    if (!match) {
+      return res.status(400).json({user: null, loggedIn: false})
     }
     const userToSend = {
-      id: user.id, 
-      email: user.email, 
-      name: `${user.first_name} ${user.last_name}`
+      id: id, 
+      email: email, 
+      name: `${first_name} ${last_name}`
     }
     return res.json({user: userToSend, loggedIn: true})
   } catch (e) {

@@ -1,5 +1,7 @@
 const Sequelize = require('sequelize')
 const Op = Sequelize.Op
+const bcrypt = require('bcrypt')
+const saltRounds = 14
 
 const db = new Sequelize({
   database: 'shopping_app_db',
@@ -30,7 +32,11 @@ const User = db.define('user', {
     type: Sequelize.STRING,
     allowNull: false,
   }
-})
+}, { hooks: {
+  afterValidate: async (user, options) => {
+    user.password = await bcrypt.hash(user.password, saltRounds)
+  },
+}})
 
 const Product = db.define('product', {
   name: {
