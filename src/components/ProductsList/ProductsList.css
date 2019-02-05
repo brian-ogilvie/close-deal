@@ -13,6 +13,7 @@
 
 .ProductsList__heading {
   margin: 0;
+  letter-spacing: .05em;
 }
 
 .ProductsList__top-line {

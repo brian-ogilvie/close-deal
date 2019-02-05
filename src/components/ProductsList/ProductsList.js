@@ -43,7 +43,7 @@ class ProductsList extends React.Component {
   	return (
   	    <div className="ProductsList">
           <div className="ProductsList__top-line">
-            <h2 className="ProductsList__heading">Items for sale in New York</h2>
+            <h2 className="ProductsList__heading">Items For Sale in New York</h2>
             <SearchBar filterProducts={this.filterProducts} />
           </div>
           <div className="ProductsList__list">

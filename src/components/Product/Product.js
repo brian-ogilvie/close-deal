@@ -16,7 +16,7 @@ const imageInlineStyle = {backgroundImage:`url(${product.image_url})`}
               <h4>{product.name}</h4>
             </div>
             <div className="Product__price-wrapper">
-              <h4>${product.price}</h4>
+              <h4 className="Product__price">${(product.price).toFixed(2)}</h4>
             </div>
           </div>
         </Link>
