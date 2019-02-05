@@ -71,10 +71,12 @@ const Transaction = db.define('transaction')
 
 User.hasMany(Product, {onDelete: 'cascade'})
 Product.belongsTo(User)
-User.hasMany(Review, {onDelete: 'cascade', foreignKey: 'poster_id'})
+
+User.hasMany(Review, {as: 'poster_of_review', onDelete: 'cascade', foreignKey: 'poster_id'})
 Review.belongsTo(User, {foreignKey: 'poster_id'})
-User.hasMany(Review, {onDelete: 'cascade', foreignKey: 'subject_id'})
+User.hasMany(Review, {as: 'subject_of_reivew', onDelete: 'cascade', foreignKey: 'subject_id'})
 Review.belongsTo(User, {foreignKey: 'subject_id'})
+
 User.hasMany(Transaction, {onDelete: 'cascade', foreignKey: 'buyer_id'})
 Transaction.belongsTo(User, {foreignKey: 'buyer_id'})
 User.hasMany(Transaction, {onDelete: 'cascade', foreignKey: 'seller_id'})
