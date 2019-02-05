@@ -13,12 +13,15 @@ class ProductDetail extends Component {
 
   async getData() {
     const url = `/products/${this.props.id}`
-    const res = await axios.get(url)
-    const product = res.data
-    console.log(product);
-    this.setState({
-      product
-    })
+    try {
+      const res = await axios.get(url)
+      const product = res.data
+      this.setState({
+        product
+      })
+    } catch (e) {
+      console.log(e.message);
+    }
   }
 
   componentDidMount() {
