@@ -70,6 +70,17 @@ app.post('/users/login', async (req, res) => {
   }
 })
 
+app.post('/users/register', async (req, res) => {
+  try {
+    const newUser = await User.create(req.body)
+    const {id, first_name, last_name, email} = newUser
+    const response = {id, first_name, last_name, email}
+    res.status(201).json(response)
+  } catch(e) {
+    res.status(500).json({message: e.message})
+  }
+})
+
 app.listen(PORT, () => {
   console.log(`Express server is listening on port ${PORT}`)
 })
