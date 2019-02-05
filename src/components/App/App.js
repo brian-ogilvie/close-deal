@@ -65,9 +65,15 @@ class App extends Component {
             <Route path='/products/:id' exact render={props => {
               return <ProductDetail id={props.match.params.id} />
             }} />
-            <Route path='/sell' component={ SellProduct }/>
+            <Route path='/sell' render={()=>{
+              if(this.state.user){
+                return <SellProduct />
+              } else {
+                this.showLogin()
+                return <Redirect to='/products' />
+              }
+            }} />
             <Route path='/profile' component={ ProductsList }/>
-            <Route path='/login' component={ ProductsList }/>
           </Switch>
         </main>
       </div>
