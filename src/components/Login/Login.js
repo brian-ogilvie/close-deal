@@ -42,8 +42,9 @@ class Login extends React.Component {
   }
 
   render() {
+    const loginClassName = 'Login' + (this.props.leaving ? ' Login--leaving' : '')
     return (
-      <div className="Login">
+      <div className={loginClassName}>
         <h2 className="Login__heading">Sign In</h2>
         <button className="Login__close" onClick={this.props.requestClose}>X</button>
         <form className="Login__form" onChange={this.onFormChange} onSubmit={this.onFormSubmit}>

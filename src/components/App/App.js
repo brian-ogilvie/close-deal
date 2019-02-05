@@ -14,6 +14,7 @@ class App extends Component {
       user: null,
       loggedIn: false,
       loginVisible: false,
+      loginLeaving: false,
     }
     this.loginResult = this.loginResult.bind(this)
     this.closeLogin = this.closeLogin.bind(this)
@@ -31,10 +32,14 @@ class App extends Component {
     })
   }
 
-  closeLogin() {
-    this.setState({
-      loginVisible: false
-    })
+  async closeLogin() {
+    await this.setState({loginLeaving: true})
+    setTimeout(() => {
+      this.setState({
+        loginVisible: false,
+        loginLeaving: false
+      })
+    }, 1000)
   }
 
   logout() {
@@ -49,7 +54,7 @@ class App extends Component {
       <div className="container">
         <Header showLogin={this.showLogin} loggedIn={this.state.loggedIn} requestLogout={this.logout} />
         
-        {this.state.loginVisible && <Login loginResult={this.loginResult} requestClose={this.closeLogin}/> }
+        {this.state.loginVisible && <Login loginResult={this.loginResult} requestClose={this.closeLogin} leaving={this.state.loginLeaving}/> }
         <main>
           <Switch>
             <Route path='/' exact render={() => {
