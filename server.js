@@ -71,9 +71,17 @@ app.post('/users/login', async (req, res) => {
 
 app.post('/users/register', async (req, res) => {
   try {
+    const existingUser = await User.findOne({
+      where: {
+        email: req.body.email
+      }
+    })
+    if (existingUser) {
+      return res.json({message: 'A user with that email address already exists.'})
+    }
     const newUser = await User.create(req.body)
     const {id, first_name, last_name, email} = newUser
-    const response = {id, first_name, last_name, email}
+    const response = {user: {id, first_name, last_name, email}}
     res.status(201).json(response)
   } catch(e) {
     res.status(500).json({message: e.message})
