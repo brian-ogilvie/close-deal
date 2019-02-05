@@ -31,7 +31,7 @@ class Header extends React.Component {
               <li className="Header__nav-item"><Link className="Header__nav-link" to="/products">Browse</Link></li>
               <li className="Header__nav-item"><Link className="Header__nav-link" to="/sell">Sell</Link></li>
               <li className="Header__nav-item"><Link className="Header__nav-link" to="/profile">Profile</Link></li>
-              <li className="Header__nav-item"><a className="Header__nav-link" to="#top" onClick={this.showLogin}>{loginText}</a></li>
+              <li className="Header__nav-item"><p className="Header__nav-link" to="#top" onClick={this.showLogin}>{loginText}</p></li>
             </ul>
           </nav>
         </header>
