@@ -1,0 +1,109 @@
+.Login {
+  position: fixed;
+  top: 80px;
+  right: 10%;
+  width: 400px;
+  background-color: #FFFBFE;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 6px rgba(0,0,0,.8);
+  animation: fade-in .5s linear;
+  transition: opacity .5s;
+}
+
+.Login--leaving {
+  opacity: 0;
+}
+
+.Login__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.4rem;
+  border-radius: 5px;
+  background-color: #FFFBFE;
+  transition: all .3s;
+  cursor: pointer;
+}
+
+.Login__close:hover {
+  color: #FFFBFE;
+  background-color: #68C5DB;
+}
+
+.Login__heading {
+  margin: 0 auto 15px;
+  padding-bottom: 10px;
+  text-align: center;
+  width: 60%;
+  border-bottom: 1px solid #FB3640;
+}
+
+.Login__form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.Login__break {
+  margin: 0 auto;
+  width: 60%;
+}
+
+.Login__label {
+  font-size: 1.1rem;
+}
+
+.Login__input {
+  font-size: 1rem;
+  padding: 5px;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.Login__submit, .Login__register {
+  width: 100%;
+  padding: 8px;
+  font-size: 1rem;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.Login__submit {
+  background-color: #FB3640;
+  margin-bottom: 15px;
+}
+
+.Login__register {
+  background-color: #727072;
+}
+
+.Login__submit:hover, .Login__register:hover {
+  background-color: #68C5DB;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

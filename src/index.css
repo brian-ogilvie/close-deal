@@ -11,3 +11,12 @@ body {
   padding-top: 80px;
   background-color: #FB3640;
 }
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
