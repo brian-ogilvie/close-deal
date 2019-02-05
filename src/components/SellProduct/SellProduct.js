@@ -56,8 +56,9 @@ class SellProduct extends Component {
         <form onSubmit={ this.onProductFormSubmit } >
 
         	<div className="SellProduct__field">
-	        	<label htmlFor="name">Name: </label>
+	        	<label htmlFor="name" className='SellProduct__label'>Name: </label>
 	          <input
+              className='SellProduct__input'
 	            type="text"
 	            name="name"
 	            placeholder="Be accurate as possible."
@@ -66,8 +67,9 @@ class SellProduct extends Component {
 	          />
           </div>
         	<div className="SellProduct__field">
-	        	<label htmlFor="description">Description: </label>
+	        	<label htmlFor="description" className='SellProduct__label'>Description: </label>
 	          <textarea
+              className='SellProduct__textarea'
 	            type="text"
 	            name="description"
 	            placeholder="Detailed descriptions help sell your item quickly!"
@@ -79,8 +81,9 @@ class SellProduct extends Component {
           </div>
 
 	       <div className="SellProduct__field">
-	           <label htmlFor="price">Price: </label>
+	           <label htmlFor="price" className='SellProduct__label'>Price: </label>
               <input
+                className='SellProduct__input'
                 type="text"
                 name="price"
                 placeholder="How much are you looking to sell it for?"
@@ -90,8 +93,9 @@ class SellProduct extends Component {
           </div>
 
           <div className="SellProduct__field">
-            <label htmlFor="image">Image URL: </label>
+            <label htmlFor="image" className='SellProduct__label'>Image URL: </label>
             <input
+              className='SellProduct__input'
               type="text"
               name="image_url"
               placeholder="Direct upload is not supported at this time."
