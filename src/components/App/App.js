@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import './App.css'
 
+import ProductDetail from '../ProductDetail/ProductDetail'
 import Header from '../Header/Header'
 import ProductsList from '../ProductsList/ProductsList'
 import Login from '../Login/Login'
@@ -60,7 +61,10 @@ class App extends Component {
             <Route path='/' exact render={() => {
               return <Redirect to='/products' />
             }} />
-            <Route path='/products' component={ ProductsList }/>
+            <Route path='/products' exact component={ ProductsList }/>
+            <Route path='/products/:id' exact render={props => {
+              return <ProductDetail id={props.match.params.id} />
+            }} />
             <Route path='/sell' component={ SellProduct }/>
             <Route path='/profile' component={ ProductsList }/>
             <Route path='/login' component={ ProductsList }/>
