@@ -14,12 +14,12 @@ app.get('/', (req, res) => {
 })
 
 app.get('/products', async(req,res) => {
-	try{
-		const products = await Product.findAll()
-		res.json(products)
-	} catch(e){
-		res.status(500).json({message: e.message})
-	}
+  try{
+    const products = await Product.findAll()
+    res.json(products)
+  } catch(e){
+    res.status(500).json({message: e.message})
+  }
 })
 
 app.get('/products/:id', async (req, res) => {
