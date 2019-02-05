@@ -86,7 +86,8 @@ const seed = async () => {
       {
         star: 5,
         comment: 'This is amazing would buy again',
-        product_id: 1
+        product_id: 1,
+        user_id: 3
       }
     ])
 
