@@ -1,9 +1,10 @@
 import React, {Component} from 'react'
 import { Redirect } from 'react-router-dom'
+import './SellProduct.css'
 
 import axios from 'axios'
 
-class CreateProductPage extends Component {
+class SellProduct extends Component {
 
   constructor(){
     super()
@@ -18,7 +19,7 @@ class CreateProductPage extends Component {
       created: false
     }
   }
-  
+
   onProductFormSubmit = async (event) => {
     event.preventDefault()
 
@@ -36,14 +37,14 @@ class CreateProductPage extends Component {
 
   onProductFormChange = (event) => {
   	const element = event.target
-  	const {name, value} = element 
+  	const {name, value} = element
 
   	this.setState(prevState=>{
       prevState.product[name] = value
       return prevState
     })
   }
-  
+
   render(){
 
   	if (this.state.created === true){
@@ -51,31 +52,33 @@ class CreateProductPage extends Component {
   	}
 
     return (
-      <div>
+      <div className="SellProduct__wrapper">
         <form onSubmit={ this.onProductFormSubmit } >
 
-        	<div className="field">
+        	<div className="SellProduct__field">
 	        	<label htmlFor="name">Name: </label>
 	          <input
-	            type="text" 
+	            type="text"
 	            name="name"
-	            placeholder="Be accurate as possible." 
+	            placeholder="Be accurate as possible."
 	            value={this.state.product.name}
               onChange={this.onProductFormChange}
 	          />
           </div>
-        	<div className="field">
+        	<div className="SellProduct__field">
 	        	<label htmlFor="description">Description: </label>
-	          <input
-	            type="text" 
+	          <textarea
+	            type="text"
 	            name="description"
-	            placeholder="Detailed descriptions help sell your item quickly!" 
+	            placeholder="Detailed descriptions help sell your item quickly!"
+              rows="5"
+              cols="22"
 	            value={this.state.product.description}
               onChange={this.onProductFormChange}
 	          />
           </div>
-          
-	       <div className="field">
+
+	       <div className="SellProduct__field">
 	           <label htmlFor="price">Price: </label>
               <input
                 type="text"
@@ -85,8 +88,8 @@ class CreateProductPage extends Component {
                 onChange={this.onProductFormChange}
               />
           </div>
-          
-          <div className="field">
+
+          <div className="SellProduct__field">
             <label htmlFor="image">Image URL: </label>
             <input
               type="text"
@@ -96,9 +99,11 @@ class CreateProductPage extends Component {
               onChange={this.onProductFormChange}
             />
           </div>
-          
-          <div className="control">
-          	<button type="submit" className="button">Sell my item!</button>
+
+          <div className="SellProduct__submit--container">
+            <div className="SellProduct__submit">
+            	<button type="submit" className="button">Sell my item!</button>
+            </div>
           </div>
         </form>
       </div>
@@ -106,4 +111,4 @@ class CreateProductPage extends Component {
   }
 }
 
-export default CreateProductPage;
+export default SellProduct;
