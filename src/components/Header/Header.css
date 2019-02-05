@@ -38,6 +38,7 @@ header {
   color: white;
   border-bottom: 1px solid transparent;
   transition: all .3s;
+  cursor: pointer;
 }
 
 .Header__nav-link:hover {

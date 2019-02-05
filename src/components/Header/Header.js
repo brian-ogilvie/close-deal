@@ -8,9 +8,20 @@ class Header extends React.Component {
     this.state = {
       active: ''
     }
+    this.showLogin = this.showLogin.bind(this)
+  }
+
+  showLogin(e) {
+    e.preventDefault()
+    if (this.props.loggedIn) {
+      this.props.requestLogout()
+    } else {
+      this.props.showLogin()
+    }
   }
 
   render() {
+    const loginText = this.props.loggedIn ? 'Log Out' : 'Login/Register'
     return (
       <div className="Header">
         <header>
@@ -20,7 +31,7 @@ class Header extends React.Component {
               <li className="Header__nav-item"><Link className="Header__nav-link" to="/products">Browse</Link></li>
               <li className="Header__nav-item"><Link className="Header__nav-link" to="/sell">Sell</Link></li>
               <li className="Header__nav-item"><Link className="Header__nav-link" to="/profile">Profile</Link></li>
-              <li className="Header__nav-item"><Link className="Header__nav-link" to="/login">Login/Register</Link></li>
+              <li className="Header__nav-item"><a className="Header__nav-link" to="#top" onClick={this.showLogin}>{loginText}</a></li>
             </ul>
           </nav>
         </header>

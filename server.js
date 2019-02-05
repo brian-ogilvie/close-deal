@@ -41,6 +41,31 @@ app.post('/products', async (req, res) => {
   }
 });
 
+app.post('/users/login', async (req, res) => {
+  const invalidMsg = 'Invalid email or password'
+  try {
+    const user = await User.findOne({
+      where: {
+        email: req.body.email
+      }
+    })
+    if (!user) {
+      return res.json({user: null, loggedIn: false})
+    } 
+    if (user.password !== req.body.password) {
+      return res.json({user: null, loggedIn: false})
+    }
+    const userToSend = {
+      id: user.id, 
+      email: user.email, 
+      name: `${user.first_name} ${user.last_name}`
+    }
+    return res.json({user: userToSend, loggedIn: true})
+  } catch (e) {
+    res.status(500).json({message: e.message})
+  }
+})
+
 app.listen(PORT, () => {
   console.log(`Express server is listening on port ${PORT}`)
 })
