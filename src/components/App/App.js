@@ -12,13 +12,15 @@ class App extends Component {
     return (
       <div className="container">
         <Header />
-        <ProductDetail />
         <main>
           <Switch>
             <Route path='/' exact render={() => {
               return <Redirect to='/products' />
             }} />
-            <Route path='/products' component={ ProductsList }/>
+            <Route path='/products' exact component={ ProductsList }/>
+            <Route path='/products/:id' exact render={props => {
+              return <ProductDetail id={props.match.params.id} />
+            }} />
             <Route path='/sell' component={ CreateProductPage }/>
             <Route path='/profile' component={ ProductsList }/>
             <Route path='/login' component={ ProductsList }/>

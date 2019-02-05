@@ -1,0 +1,36 @@
+.ProductDetail__container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10%;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
+.ProductDetail__details-container {
+  display: flex;
+}
+
+.ProductDetail__image {
+  flex: 1;
+  margin: 10px;
+  border: solid black 2px;
+}
+
+.ProductDetail__info-container {
+  flex: 1;
+  border: solid black 2px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.ProductDetail__image {
+  height: 250px;
+  width: 300px;
+}
+
+.ProductDetail__review-container {
+  flex: 1;
+  border: solid black 2px;
+  margin: 10px;
+}
