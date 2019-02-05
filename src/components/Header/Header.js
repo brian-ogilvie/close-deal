@@ -25,7 +25,7 @@ class Header extends React.Component {
     return (
       <div className="Header">
         <header>
-          <h1 className="Header__logo">Shopping App</h1>
+          <h1 className="Header__logo">CloseDeal</h1>
           <nav>
             <ul className="Header__nav">
               <li className="Header__nav-item"><Link className="Header__nav-link" to="/products">Browse</Link></li>

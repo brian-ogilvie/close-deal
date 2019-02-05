@@ -34,7 +34,7 @@
   width: 100%;
   height: 75px;
   overflow: hidden;
-  align-items: center;
+  align-items: flex-start;
 }
 
 
@@ -46,6 +46,12 @@
   flex-basis: 20%;
   text-align: right;
   color: black;
+  align-self: flex-end;
+}
+
+.Product__price {
+  font-weight: normal;
+  color: dimgray;
 }
 
 .Product__name-wrapper {
