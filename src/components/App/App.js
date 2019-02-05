@@ -4,8 +4,8 @@ import './App.css'
 
 import Header from '../Header/Header'
 import ProductsList from '../ProductsList/ProductsList'
-import CreateProductPage from '../CreateProductPage/CreateProductPage'
 import Login from '../Login/Login'
+import SellProduct from '../SellProduct/SellProduct'
 
 class App extends Component {
   constructor() {
@@ -61,7 +61,7 @@ class App extends Component {
               return <Redirect to='/products' />
             }} />
             <Route path='/products' component={ ProductsList }/>
-            <Route path='/sell' component={ CreateProductPage }/>
+            <Route path='/sell' component={ SellProduct }/>
             <Route path='/profile' component={ ProductsList }/>
             <Route path='/login' component={ ProductsList }/>
           </Switch>

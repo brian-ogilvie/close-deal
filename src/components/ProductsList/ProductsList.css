@@ -3,11 +3,12 @@
 }
 
 .ProductsList__list {
-  width: 100%;
+  max-width: 100%;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
-  align-items: flex-start; 
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0 auto;
 }
 
 .ProductsList__heading {
