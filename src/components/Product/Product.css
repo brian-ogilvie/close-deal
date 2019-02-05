@@ -32,6 +32,11 @@
   align-items: center;
 }
 
+.Product__info-wrapper a {
+  text-decoration: none;
+  color: black;
+}
+
 .Product__info-wrapper h4 {
   margin: 0;
 }
@@ -39,10 +44,18 @@
 .Product__price-wrapper {
   flex-basis: 20%;
   text-align: right;
+  text-decoration: none;
+  color: black;
 }
 
 .Product__name-wrapper {
   flex-basis: 80%;
   text-align: left;
   padding-left: 2px;
+  text-decoration: none;
+  color: black;
+}
+
+a {
+  text-decoration: none;
 }
