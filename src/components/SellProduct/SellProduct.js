@@ -100,11 +100,9 @@ class SellProduct extends Component {
             />
           </div>
 
-          <div className="SellProduct__submit--container">
-            <div className="SellProduct__submit">
-            	<button type="submit" className="button">Sell my item!</button>
-            </div>
-          </div>
+	  <div className="SellProduct__submit">
+	    <button type="submit" className="button">Sell my item!</button>
+	  </div>
         </form>
       </div>
     )
