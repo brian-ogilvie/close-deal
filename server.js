@@ -24,7 +24,11 @@ app.get('/products', async(req,res) => {
 
 app.get('/products/:id', async (req, res) => {
   try {
-    const product = await Product.findByPk(req.params.id)
+    const product = await Product.findByPk(req.params.id, {
+      include: {
+        model: Review
+      }
+    })
     if (!product) throw Error('Product not found!')
     res.json(product)
   } catch(e) {
@@ -52,15 +56,15 @@ app.post('/users/login', async (req, res) => {
     })
     if (!user) {
       return res.status(400).json({user: null, loggedIn: false})
-    } 
+    }
     const {first_name, last_name, email, id, password: hash} = user
     const match = await bcrypt.compare(req.body.password, hash)
     if (!match) {
       return res.status(400).json({user: null, loggedIn: false})
     }
     const userToSend = {
-      id: id, 
-      email: email, 
+      id: id,
+      email: email,
       name: `${first_name} ${last_name}`
     }
     return res.json({user: userToSend, loggedIn: true})

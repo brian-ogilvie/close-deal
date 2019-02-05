@@ -82,6 +82,14 @@ const seed = async () => {
       },
     ])
 
+    await Review.bulkCreate([
+      {
+        star: 5,
+        comment: 'This is amazing would buy again',
+        product_id: 1
+      }
+    ])
+
     console.log('🗂  database seed complete')
   } catch (e) {
     console.error('‼️ ', e.message)
