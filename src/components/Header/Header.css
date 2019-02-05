@@ -5,7 +5,6 @@
   right: 0;
   padding: 10px;
   background-color: #000000;
-  /* box-shadow: 0 2px 4px rgba(0,0,0,.8); */
   color: white;
 }
 
@@ -29,6 +28,7 @@ header {
 
 .Header__nav-item {
   display: inline-block;
+  font-family: 'Oswald', sans-serif;
   font-size: 1.3rem;
   margin: 0 15px;
 }
@@ -36,12 +36,12 @@ header {
 .Header__nav-link {
   text-decoration: none;
   color: white;
-  border-bottom: 1px solid transparent;
+  border-bottom: 2px solid transparent;
   transition: all .3s;
   cursor: pointer;
   display: inline;
 }
 
 .Header__nav-link:hover {
-  border-bottom: 1px solid #B80C09;
+  border-bottom: 2px solid #B80C09;
 }

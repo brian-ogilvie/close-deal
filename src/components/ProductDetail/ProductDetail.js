@@ -44,7 +44,7 @@ class ProductDetail extends Component {
           <div className="ProductDetail__info-container">
             <h2>{this.state.product.name}</h2>
             <h2>${this.state.product.price}</h2>
-            <h3>{this.state.product.description}</h3>
+            <p>{this.state.product.description}</p>
           </div>
         </div>
         <div className="ProductDetail__review-container">
