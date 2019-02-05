@@ -6,8 +6,8 @@ import axios from 'axios'
 
 class SellProduct extends Component {
 
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     //sets the initial state via the constructor!
     this.state = {
       product: {
@@ -27,7 +27,8 @@ class SellProduct extends Component {
     	name: this.state.product.name,
       description: this.state.product.description,
     	price: this.state.product.price,
-    	image_url: this.state.product.image_url
+    	image_url: this.state.product.image_url,
+      user_id: this.props.user_id
     }
 
     await axios.post('/products', newProduct)
@@ -56,8 +57,9 @@ class SellProduct extends Component {
         <form onSubmit={ this.onProductFormSubmit } >
 
         	<div className="SellProduct__field">
-	        	<label htmlFor="name">Name: </label>
+	        	<label htmlFor="name" className='SellProduct__label'>Name: </label>
 	          <input
+              className='SellProduct__input'
 	            type="text"
 	            name="name"
 	            placeholder="Be accurate as possible."
@@ -66,8 +68,9 @@ class SellProduct extends Component {
 	          />
           </div>
         	<div className="SellProduct__field">
-	        	<label htmlFor="description">Description: </label>
+	        	<label htmlFor="description" className='SellProduct__label'>Description: </label>
 	          <textarea
+              className='SellProduct__textarea'
 	            type="text"
 	            name="description"
 	            placeholder="Detailed descriptions help sell your item quickly!"
@@ -79,8 +82,9 @@ class SellProduct extends Component {
           </div>
 
 	       <div className="SellProduct__field">
-	           <label htmlFor="price">Price: </label>
+	           <label htmlFor="price" className='SellProduct__label'>Price: </label>
               <input
+                className='SellProduct__input'
                 type="text"
                 name="price"
                 placeholder="How much are you looking to sell it for?"
@@ -90,8 +94,9 @@ class SellProduct extends Component {
           </div>
 
           <div className="SellProduct__field">
-            <label htmlFor="image">Image URL: </label>
+            <label htmlFor="image" className='SellProduct__label'>Image URL: </label>
             <input
+              className='SellProduct__input'
               type="text"
               name="image_url"
               placeholder="Direct upload is not supported at this time."

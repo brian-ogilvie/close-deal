@@ -11,19 +11,19 @@
   padding: 15px;
 }
 
-.SellProduct__submit--container{
+.SellProduct__submit{
   display: flex;
   align-content: center;
   justify-content: center;
   padding: 25px;
 }
 
-label {
+.SellProduct__label {
   display: inline-block;
   width: 140px;
   text-align: right;
 }
 
-textarea {
+.SellProduct__textarea {
   resize: none;
 }
