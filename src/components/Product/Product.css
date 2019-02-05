@@ -4,11 +4,12 @@
   margin: 5px 1% 10px;
   border-radius: 8px;
   overflow: hidden;
+  box-shadow: 4px 4px 8px rgba(0,0,0,0);
+  transition: all .3s;
 }
 
 .Product:hover {
   box-shadow: 4px 4px 8px rgba(0,0,0,.8);
-  transition: all .3s;
 }
 
 .Product__image {
