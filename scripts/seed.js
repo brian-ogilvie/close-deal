@@ -84,10 +84,10 @@ const seed = async () => {
 
     await Review.bulkCreate([
       {
-        star: 5,
+        stars: 5,
         comment: 'This is amazing would buy again',
-        product_id: 1,
-        user_id: 3
+        poster_id: 1,
+        subject_id: 3
       }
     ])
 
