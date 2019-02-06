@@ -17,12 +17,16 @@ app.get('/products', async(req,res) => {
   try{
     const products = await Product.findAll({
       limit: 20,
-      attributes: ['id','name','price','image_url', 'created_at','user_id'],
+      attributes: ['id','name','price','image_url', 'description', 'created_at','user_id'],
       include: [
-        {model: User, attributes: ['id'], include: [
-          {model: Review, as: 'subject_of_reivew', attributes: ['stars']}
-        ]}
-      ]
+        {model: User, as: 'sold_by', attributes: ['id'], 
+          include: [
+            {model: Review, as: 'subject_of_reviews',
+              attributes: ['stars']
+            },
+          ]
+        }
+      ],
     })
     res.json(products)
   } catch(e){
@@ -36,7 +40,7 @@ app.get('/products/:id', async (req, res) => {
       attributes: ['id', 'name', 'price', 'description','image_url', 'created_at'],
       include: [
         {model: User, as: 'sold_by', attributes: ['id','first_name','last_name'], include: [
-          {model: Review, as: 'subject_of_reivews', attributes: ['id', 'stars', 'comment', 'created_at'],
+          {model: Review, as: 'subject_of_reviews', attributes: ['id', 'stars', 'comment', 'created_at'],
             include: [
               {model: User, as: 'poster', attributes: ['id','first_name', 'last_name']}
             ]

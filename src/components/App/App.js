@@ -54,7 +54,7 @@ class App extends Component {
     return (
       <div className="container">
         <Header showLogin={this.showLogin} loggedIn={this.state.loggedIn} requestLogout={this.logout} />
-        
+
         {this.state.loginVisible && <Login loginResult={this.loginResult} requestClose={this.closeLogin} leaving={this.state.loginLeaving}/> }
         <main>
           <Switch>

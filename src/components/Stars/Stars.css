@@ -1,3 +1,8 @@
 .Stars {
   font-size: 28px;
+  display: inline-block;
+}
+
+.Stars--small {
+  font-size: 14px;
 }
