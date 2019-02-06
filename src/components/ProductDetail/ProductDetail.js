@@ -17,7 +17,6 @@ class ProductDetail extends Component {
     try {
       const res = await axios.get(url)
       const product = res.data
-      console.log(product.sold_by.subject_of_reivews);
       this.setState({
         product
       })
