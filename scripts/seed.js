@@ -112,7 +112,7 @@ const seed = async () => {
         comment: 'Don\'t trust this guy. He\'s a criminal.',
         poster_id: 2,
         subject_id: 3
-      },    
+      },
     ])
 
     console.log('🗂  database seed complete')

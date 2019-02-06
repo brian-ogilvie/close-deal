@@ -117,7 +117,7 @@ class Login extends React.Component {
   render() {
     const loginClassName = 'Login' + (this.props.leaving ? ' Login--leaving' : '')
     const headingText = this.state.loginOrRegister === 'login' ? 'Sign In' : 'Create an Account'
-    const toggleText = this.state.loginOrRegister === 'login' ? 'Create an account' : 'Alredy a member? Sign in!'
+    const toggleText = this.state.loginOrRegister === 'login' ? 'Create an account' : 'Already a member? Sign in!'
     return (
       <div className={loginClassName}>
         <h2 className="Login__heading">{headingText}</h2>
