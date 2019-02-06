@@ -111,6 +111,20 @@ app.post('/users/register', async (req, res) => {
   }
 })
 
+app.get('/users/:id', async (req, res) => {
+  try {
+    const user = await User.findByPk(req.params.id, {
+      exclude: ['password'],
+      include: [
+        {model: Review, as: 'subject_of_reviews'}
+      ]
+    })
+    res.json(user)
+  } catch (e) {
+    res.status(500).json({message: e.message})
+  }
+})
+
 app.listen(PORT, () => {
   console.log(`Express server is listening on port ${PORT}`)
 })

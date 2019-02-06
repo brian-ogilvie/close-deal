@@ -7,6 +7,7 @@ import Header from '../Header/Header'
 import ProductsList from '../ProductsList/ProductsList'
 import Login from '../Login/Login'
 import SellProduct from '../SellProduct/SellProduct'
+import UserProfile from '../UserProfile/UserProfile'
 
 class App extends Component {
   constructor() {
@@ -64,6 +65,9 @@ class App extends Component {
             <Route path='/products' exact component={ ProductsList }/>
             <Route path='/products/:id' exact render={props => {
               return <ProductDetail id={props.match.params.id} />
+            }} />
+            <Route path='/seller/:id' render={props => {
+              return <UserProfile userId={props.match.params.id} currentUser={this.state.user} />
             }} />
             <Route path='/sell' render={()=>{
               if(this.state.user){
