@@ -1,6 +1,5 @@
 const Sequelize = require('sequelize')
 const Op = Sequelize.Op
-const fn = Sequelize.fn
 const bcrypt = require('bcrypt')
 const saltRounds = 14
 
@@ -80,4 +79,4 @@ Transaction.belongsTo(User, {foreignKey: 'seller_id'})
 Transaction.belongsToMany(Product, {through: 'purchased_products'})
 Product.belongsToMany(Transaction, {through: 'purchased_products'})
 
-module.exports = {db, Op, User, Product, Review, Transaction, fn, Sequelize}
+module.exports = {db, Op, User, Product, Review, Transaction }

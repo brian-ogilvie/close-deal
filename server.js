@@ -7,7 +7,7 @@ const app = express()
 
 app.use(bodyParser.json())
 
-const { User, Product, Review, Transaction, db} = require('./models')
+const { User, Product, Review, Transaction } = require('./models')
 
 app.get('/', (req, res) => {
   res.send('Welcome to the shopping app!')
@@ -40,7 +40,7 @@ app.get('/products/:id', async (req, res) => {
       attributes: ['id', 'name', 'price', 'description','image_url', 'created_at'],
       include: [
         {model: User, as: 'sold_by', attributes: ['id','first_name','last_name'], include: [
-          {model: Review, as: 'subject_of_reivews', attributes: ['id', 'stars', 'comment', 'created_at'],
+          {model: Review, as: 'subject_of_reviews', attributes: ['id', 'stars', 'comment', 'created_at'],
             include: [
               {model: User, as: 'poster', attributes: ['id','first_name', 'last_name']}
             ]

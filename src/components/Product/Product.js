@@ -20,7 +20,7 @@ const imageInlineStyle = {backgroundImage:`url(${product.image_url})`}
 
   return(
       <div className="Product">
-        <Stars stars={avg_stars} />
+        <div className="Product__stars"><Stars stars={avg_stars} size="small" /></div>
         <Link className="Product__link" to={`/products/${product.id}`}>
           <div className="Product__img-wrapper" style={imageInlineStyle}>
             <img className="Product__image"  src={product.image_url} alt = {product.name} />
