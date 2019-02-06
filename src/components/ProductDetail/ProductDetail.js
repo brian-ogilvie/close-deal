@@ -32,8 +32,12 @@ class ProductDetail extends Component {
   render() {
     const reviews = this.state.product.reviews
     const productReviews = reviews && reviews.length > 0 ?reviews.map(review => {
-      return <Review key={review.id} review={review}/>
+      return <Review key={review.id} review={review} />
     }): <div></div>
+    const seller = this.state.product.sold_by ? this.state.product.sold_by : {first_name: '', last_name: ''}
+    const reviewsOnSeller = this.state.product.sold_by ? this.state.product.sold_by.subject_of_reviews.map(review => {
+      return <Review review={review} />
+    }) : 'This person has no reviews yet'
     return(
       <div className="ProductDetail__container">
         <div className="ProductDetail__details-container">
@@ -41,13 +45,14 @@ class ProductDetail extends Component {
             <img className="ProductDetail__image" src={this.state.product.image_url} alt={this.state.product.name}/>
           </div>
           <div className="ProductDetail__info-container">
+            <h2>Seller: {seller.first_name}</h2>
             <h2>{this.state.product.name}</h2>
             <h2>${this.state.product.price}</h2>
             <p>{this.state.product.description}</p>
           </div>
         </div>
         <div className="ProductDetail__review-container">
-          {productReviews}
+          {reviewsOnSeller}
         </div>
       </div>
     )
