@@ -36,7 +36,7 @@ class ProductDetail extends Component {
       return <Review key={review.id} review={review} />
     }): <div></div>
     const seller = this.state.product.sold_by ? this.state.product.sold_by : {first_name: '', last_name: ''}
-    const reviewsOnSeller = this.state.product.sold_by ? this.state.product.sold_by.subject_of_reivews.map(review => {
+    const reviewsOnSeller = this.state.product.sold_by ? this.state.product.sold_by.subject_of_reviews.map(review => {
       return <Review review={review} />
     }) : 'This person has no reviews yet'
     return(
