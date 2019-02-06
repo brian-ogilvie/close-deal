@@ -1,9 +1,19 @@
 import React from 'react'
 import './Stars.css'
 
-const Stars = props => {
+const Stars = ({stars}) => {
+  let allStars = ''
+  for (let i = 1; i<=5; i++) {
+    if (i<=Math.round(Number(stars))) {
+      allStars += '⭐️'
+    } else {
+      allStars += '✪'
+    }
+  }
   return (
-    <h1>Stars</h1>
+    <div className="Stars">
+      {allStars}
+    </div>
   )
 }
 
