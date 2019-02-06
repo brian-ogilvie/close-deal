@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize')
 const Op = Sequelize.Op
+const fn = Sequelize.fn
 const bcrypt = require('bcrypt')
 const saltRounds = 14
 
@@ -69,7 +70,7 @@ Product.belongsTo(User, {as: 'sold_by', foreignKey: 'user_id'})
 
 User.hasMany(Review, {as: 'poster_of_reviews', onDelete: 'cascade', foreignKey: 'poster_id'})
 Review.belongsTo(User, {as: 'poster', foreignKey: 'poster_id'})
-User.hasMany(Review, {as: 'subject_of_reivews', onDelete: 'cascade', foreignKey: 'subject_id'})
+User.hasMany(Review, {as: 'subject_of_reviews', onDelete: 'cascade', foreignKey: 'subject_id'})
 Review.belongsTo(User, {as: 'subject', foreignKey: 'subject_id'})
 
 User.hasMany(Transaction, {onDelete: 'cascade', foreignKey: 'buyer_id'})
@@ -79,4 +80,4 @@ Transaction.belongsTo(User, {foreignKey: 'seller_id'})
 Transaction.belongsToMany(Product, {through: 'purchased_products'})
 Product.belongsToMany(Transaction, {through: 'purchased_products'})
 
-module.exports = {db, Op, User, Product, Review, Transaction}
+module.exports = {db, Op, User, Product, Review, Transaction, fn, Sequelize}

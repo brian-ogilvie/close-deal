@@ -74,7 +74,7 @@ const seed = async () => {
         user_id: 3,
       },
       {
-        name: 'Ludwig Questlove Pocket Kit Drum Set - Black Sparkle',
+        name: 'Ludwig Questlove Pocket Kit Drum Set',
         price: 250,
         image_url: 'https://media.sweetwater.com/api/i/f-webp__q-82__ha-a90197f7cfebf02d__hmac-b4d65c3ad217f6b81ee73a4b3a98a41fb95a93ae/images/items/750/PocketKit-BS-large.jpg.auto.webp',
         description: 'it works, trust us.',
@@ -112,7 +112,13 @@ const seed = async () => {
         comment: 'Don\'t trust this guy. He\'s a criminal.',
         poster_id: 2,
         subject_id: 3
-      },    
+      },
+      {
+        stars: 5,
+        comment: 'Best. Seller. Ever!',
+        poster_id: 2,
+        subject_id: 1
+      },
     ])
 
     console.log('🗂  database seed complete')
