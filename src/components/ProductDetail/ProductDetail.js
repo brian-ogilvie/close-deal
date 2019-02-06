@@ -43,7 +43,7 @@ class ProductDetail extends Component {
   }
   onProductDelete = (product) => {
     axios.delete(`/products/${product.id}`)
-      .then(res=>console.log(res.data, "Product deleted"))
+      .then(res=>alert(res.data, "Product deleted"))
       .then(this.setState({isDeleted:true}))
   }
 
