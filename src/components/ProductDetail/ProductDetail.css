@@ -6,6 +6,7 @@
   height: 100%;
   background-color: white;
   position: relative;
+  z-index: 1;
 }
 
 .ProductDetail__deleteButton {

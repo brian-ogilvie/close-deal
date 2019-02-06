@@ -5,8 +5,8 @@ import Review from '../Review/Review'
 import {Redirect} from 'react-router-dom'
 
 class ProductDetail extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       product: {},
       isDeleted: false
@@ -31,13 +31,25 @@ class ProductDetail extends Component {
     this.getData()
   }
 
+  deleteProduct = () => {
+    if(this.props.user && this.props.user.id === this.state.product.sold_by.id){
+      return (
+        <button className="ProductDetail__deleteButton" 
+        onClick={()=> this.onProductDelete(this.state.product)}>Delete</button>
+      )
+    } else {
+      return null
+    }
+  }
+  onProductDelete = (product) => {
+    axios.delete(`/products/${product.id}`)
+      .then(res=>console.log(res.data, "Product deleted"))
+      .then(this.setState({isDeleted:true}))
+  }
+
   render() {
 
-    const onProductDelete = (product) => {
-      axios.delete(`/products/${product.id}`)
-        .then(res=>console.log(res.data, "Product deleted"))
-        .then(this.setState({isDeleted:true}))
-    }
+
 
     const reviews = this.state.product.reviews
 
@@ -51,7 +63,7 @@ class ProductDetail extends Component {
 
     return(
       <div className="ProductDetail__container">
-        <button className="ProductDetail__deleteButton" onClick={()=> onProductDelete(this.state.product)}>Delete</button>
+        {this.deleteProduct()}
         <div className="ProductDetail__details-container">
           <div className="ProductDetail__image-wrapper">
             <img className="ProductDetail__image" src={this.state.product.image_url} alt={this.state.product.name}/>
