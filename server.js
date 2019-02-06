@@ -15,7 +15,15 @@ app.get('/', (req, res) => {
 
 app.get('/products', async(req,res) => {
   try{
-    const products = await Product.findAll()
+    const products = await Product.findAll({
+      limit: 20,
+      attributes: ['id','name','price','image_url', 'created_at','user_id'],
+      include: [
+        {model: User, attributes: ['id'], include: [
+          {model: Review, as: 'subject_of_reivew', attributes: ['stars']}
+        ]}
+      ]
+    })
     res.json(products)
   } catch(e){
     res.status(500).json({message: e.message})

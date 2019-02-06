@@ -31,7 +31,6 @@ class ProductDetail extends Component {
 
   render() {
     const reviews = this.state.product.reviews
-    console.log(reviews)
     const productReviews = reviews && reviews.length > 0 ?reviews.map(review => {
       return <Review key={review.id} review={review}/>
     }): <div></div>
