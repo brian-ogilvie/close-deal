@@ -97,8 +97,8 @@ const seed = async () => {
       },
       {
         stars: 4,
-        comment: 'Great customer service. Lackluster bedside manner.',
-        poster_id: 3,
+        comment: 'Nice guy, but he kept playing the guitar during pickup. Sort of weird.',
+        poster_id: 2,
         subject_id: 1
       },
       {
