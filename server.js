@@ -19,9 +19,11 @@ app.get('/products', async(req,res) => {
       limit: 20,
       attributes: ['id','name','price','image_url', 'created_at','user_id'],
       include: [
-        {model: User, attributes: ['id'], include: [
-          {model: Review, as: 'subject_of_reivew', attributes: ['stars']}
-        ]}
+        {model: User, as: 'sold_by', attributes: ['id'], 
+        include: [
+          {model: Review, as: 'subject_of_reivews', attributes: ['stars']}
+        ]
+      }
       ]
     })
     res.json(products)
