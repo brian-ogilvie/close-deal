@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Review = ({review}) => {
-	console.log(review)
 	return(
 		<div className='Review__wrapper'>
 			{review.poster.first_name}
