@@ -17,7 +17,7 @@ app.get('/products', async(req,res) => {
   try{
     const products = await Product.findAll({
       limit: 20,
-      attributes: ['id','name','price','image_url', 'created_at','user_id'],
+      attributes: ['id','name','price','image_url', 'description', 'created_at','user_id'],
       include: [
         {model: User, as: 'sold_by', attributes: ['id'], 
           include: [
