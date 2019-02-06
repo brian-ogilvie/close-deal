@@ -26,10 +26,9 @@ app.get('/products/:id', async (req, res) => {
   try {
     const product = await Product.findByPk(req.params.id, {
       include: [
-        {model: Review, include: [
-          {model: User, attributes: ['id', 'first_name', 'last_name']}
-        ]},
-        {model:User, attributes: ['id', 'first_name', 'last_name']}
+        {model: User, include: [
+          {model: Review, as: 'subject_of_reivew'}
+        ]}
       ]
     })
     if (!product) throw Error('Product not found!')

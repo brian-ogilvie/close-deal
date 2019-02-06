@@ -84,11 +84,35 @@ const seed = async () => {
 
     await Review.bulkCreate([
       {
-        star: 5,
-        comment: 'This is amazing would buy again',
-        product_id: 1,
-        user_id: 3
-      }
+        stars: 5,
+        comment: 'This guy was laid back and awesome',
+        poster_id: 1,
+        subject_id: 3
+      },
+      {
+        stars: 2,
+        comment: 'Couldn\'t find his apartment!',
+        poster_id: 3,
+        subject_id: 1
+      },
+      {
+        stars: 4,
+        comment: 'Great customer service. Lackluster bedside manner.',
+        poster_id: 3,
+        subject_id: 1
+      },
+      {
+        stars: 3,
+        comment: 'Great customer service. Lackluster bedside manner.',
+        poster_id: 1,
+        subject_id: 2
+      },
+      {
+        stars: 1,
+        comment: 'Don\'t trust this guy. He\'s a criminal.',
+        poster_id: 2,
+        subject_id: 3
+      },    
     ])
 
     console.log('🗂  database seed complete')
