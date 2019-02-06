@@ -1,7 +1,8 @@
 import React from 'react'
 import './Stars.css'
 
-const Stars = ({stars}) => {
+const Stars = ({stars, size}) => {
+  const starsClassName = `Stars Stars--${size}`
   let allStars = ''
   for (let i = 1; i<=5; i++) {
     if (i<=Math.round(Number(stars))) {
@@ -11,7 +12,7 @@ const Stars = ({stars}) => {
     }
   }
   return (
-    <div className="Stars">
+    <div className={starsClassName}>
       {allStars}
     </div>
   )

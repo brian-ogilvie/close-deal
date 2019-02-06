@@ -1,12 +1,26 @@
 import React from "react"
 import "./Product.css"
 import { Link } from "react-router-dom"
+import Stars from '../Stars/Stars'
 
 const Product = ({product}) => {
 const imageInlineStyle = {backgroundImage:`url(${product.image_url})`}
 
+  function averageRatings(reviews) {
+    return ((reviews.map(review => {
+      return Number(review.stars)
+    })
+    .reduce((acc, curr) => {
+      return acc + curr
+    }))/reviews.length)
+    .toFixed(1)
+  }
+
+  const avg_stars = averageRatings(product.sold_by.subject_of_reviews)
+
   return(
       <div className="Product">
+        <div className="Product__stars"><Stars stars={avg_stars} size="small" /></div>
         <Link className="Product__link" to={`/products/${product.id}`}>
           <div className="Product__img-wrapper" style={imageInlineStyle}>
             <img className="Product__image"  src={product.image_url} alt = {product.name} />
