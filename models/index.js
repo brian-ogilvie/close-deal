@@ -49,11 +49,6 @@ const Product = db.define('product', {
     allowNull: false,
   },
   image_url: Sequelize.STRING,
-  num_available: {
-    type: Sequelize.INTEGER,
-    allowNull: false,
-    defaultValue: 1,
-  },
 })
 
 const Review = db.define('review', {
@@ -70,12 +65,12 @@ const Review = db.define('review', {
 const Transaction = db.define('transaction')
 
 User.hasMany(Product, {onDelete: 'cascade'})
-Product.belongsTo(User)
+Product.belongsTo(User, {as: 'sold_by', foreignKey: 'user_id'})
 
-User.hasMany(Review, {as: 'poster_of_review', onDelete: 'cascade', foreignKey: 'poster_id'})
-Review.belongsTo(User, {foreignKey: 'poster_id'})
-User.hasMany(Review, {as: 'subject_of_reivew', onDelete: 'cascade', foreignKey: 'subject_id'})
-Review.belongsTo(User, {foreignKey: 'subject_id'})
+User.hasMany(Review, {as: 'poster_of_reviews', onDelete: 'cascade', foreignKey: 'poster_id'})
+Review.belongsTo(User, {as: 'poster', foreignKey: 'poster_id'})
+User.hasMany(Review, {as: 'subject_of_reivews', onDelete: 'cascade', foreignKey: 'subject_id'})
+Review.belongsTo(User, {as: 'subject', foreignKey: 'subject_id'})
 
 User.hasMany(Transaction, {onDelete: 'cascade', foreignKey: 'buyer_id'})
 Transaction.belongsTo(User, {foreignKey: 'buyer_id'})

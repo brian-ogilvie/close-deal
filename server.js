@@ -25,9 +25,14 @@ app.get('/products', async(req,res) => {
 app.get('/products/:id', async (req, res) => {
   try {
     const product = await Product.findByPk(req.params.id, {
+      attributes: ['id', 'name', 'price', 'description','image_url', 'created_at'],
       include: [
-        {model: User, include: [
-          {model: Review, as: 'subject_of_reivew'}
+        {model: User, as: 'sold_by', attributes: ['id','first_name','last_name'], include: [
+          {model: Review, as: 'subject_of_reivews', attributes: ['id', 'stars', 'comment', 'created_at'],
+            include: [
+              {model: User, as: 'poster', attributes: ['id','first_name', 'last_name']}
+            ]
+          }
         ]}
       ]
     })
