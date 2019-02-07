@@ -1,8 +1,9 @@
 .UpdateProduct__wrapper{
   width: 75%;
   margin: 0 auto;
-  background-color: white;
+  background-color: #FFFBFE;
   border: 1px solid gray;
+  border-radius: 8px;
 }
 
 .UpdateProduct__field{
