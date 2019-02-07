@@ -26,6 +26,11 @@ View our Kanban board on Trello [here](https://trello.com/b/Kokd8Ev1/project-3)
 <img src="https://res.cloudinary.com/brian-ogilvie/image/upload/v1549293157/Project%203/Entity_Relational_Diagram.png" alt="ERD">
 </details>
 
+### Component Hierarchy
+<details><summary>Component Wireframe from LucidChart.com</summary>
+<img src="https://res.cloudinary.com/brian-ogilvie/image/upload/v1549522953/Project%203/Component%20Hierarchy.png" alt="hierarchy">
+</details>
+
 ### Dependencies
 #### Front-End
 - react & react-dom
