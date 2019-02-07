@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   padding: 10px;
-  background-color: #000000;
+  background-color: rgba(0, 0, 0, 0.9);
   color: white;
   z-index: 5;
 }
@@ -22,7 +22,7 @@ header {
 .Header__logo {
   margin: 0;
   font-size: 2.5rem;
-  background: -webkit-linear-gradient(#eee, #333);
+  background: linear-gradient(#eee, #333);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -49,5 +49,5 @@ header {
 }
 
 .Header__nav-link:hover {
-  border-bottom: 2px solid #B80C09;
+  border-bottom: 2px solid #e66465;
 }

@@ -33,7 +33,7 @@ html, body {
 
 body {
   padding-top: 80px;
-  background-color: #86bd70;
+  background: linear-gradient(#e66465, #9198e5);
   color: black;
   font-family: 'Open Sans', sans-serif;
 }
