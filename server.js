@@ -2,10 +2,12 @@ const express = require('express')
 const PORT = process.env.PORT || 5000
 const bodyParser = require('body-parser')
 const bcrypt = require('bcrypt')
+const morgan = require('morgan')
 
 const app = express()
 
 app.use(bodyParser.json())
+app.use(morgan('dev'))
 
 const { User, Product, Review, Transaction } = require('./models')
 
@@ -137,6 +139,31 @@ app.post('/users/register', async (req, res) => {
     const response = {user: {id, first_name, last_name, email}}
     res.status(201).json(response)
   } catch(e) {
+    res.status(500).json({message: e.message})
+  }
+})
+
+app.get('/users/:id', async (req, res) => {
+  try {
+    const user = await User.findByPk(req.params.id, {
+      attributes: { exclude: ['password'] },
+      include: [
+        {
+          model: Review, as: 'subject_of_reviews',
+          include: [
+            {
+              model: User, as: 'poster',
+              attributes: ['id','first_name','last_name']
+            }
+          ]
+        },
+        {
+          model: Product
+        }
+      ],
+    })
+    res.json(user)
+  } catch (e) {
     res.status(500).json({message: e.message})
   }
 })

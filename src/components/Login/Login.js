@@ -41,7 +41,7 @@ class Login extends React.Component {
       const {user, loggedIn} = res.data
       this.props.loginResult({user, loggedIn})
       if (user) {
-        this.props.requestClose()
+        this.props.requestClose(this.props.requester)
       }
     } catch (e) {
       console.error(e.message)
