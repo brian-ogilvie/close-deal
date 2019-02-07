@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import "./ProductDetail.css"
 import Review from '../Review/Review'
+import {Redirect} from 'react-router-dom'
 
 class ProductDetail extends Component {
   constructor(props) {
@@ -19,7 +20,7 @@ class ProductDetail extends Component {
     try {
       const res = await axios.get(url)
       const product = res.data
-      if(this.props.user  && product.sold_by.id === this.props.user.id ){\
+      if(this.props.user  && product.sold_by.id === this.props.user.id ){
         await this.setState({
           userIsSeller: true
         })
@@ -37,7 +38,7 @@ class ProductDetail extends Component {
   showDeleteButton = () => {
     if(this.state.userIsSeller){
       return (
-        <button className="ProductDetail__deleteButton" 
+        <button className="ProductDetail__deleteButton"
         onClick={()=> this.onProductDelete(this.state.product)}>Delete</button>
       )
     } else {
@@ -51,11 +52,15 @@ class ProductDetail extends Component {
   }
 
   render() {
-  
+
     const seller = this.state.product.sold_by ? this.state.product.sold_by : {first_name: '', last_name: ''}
     const reviewsOnSeller = this.state.product.sold_by ? this.state.product.sold_by.subject_of_reviews.map(review => {
       return <Review key={review.id} review={review} />
     }) : 'This person has no reviews yet'
+
+    if(this.state.isDeleted === true){
+      return <Redirect to={'/products/'} />
+    }
 
     return(
       <div className="ProductDetail__container">
