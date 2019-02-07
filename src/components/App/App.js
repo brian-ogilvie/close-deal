@@ -74,7 +74,7 @@ class App extends Component {
             <Route path='/products/:id' exact render={props => {
               return <ProductDetail id={props.match.params.id} user={this.state.user}/>
             }} />
-            <Route path='/seller/:id' render={props => {
+            <Route path='/seller/:id' exact render={props => {
               return <UserProfile userId={props.match.params.id} currentUser={this.state.user} />
             }} />
             <Route path='/sell' render={()=>{

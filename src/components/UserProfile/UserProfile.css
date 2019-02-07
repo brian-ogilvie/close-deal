@@ -21,7 +21,7 @@
 
 .UserProfile__content {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   width: 100%;
 }
 
@@ -31,7 +31,11 @@
 
 .UserProfile__products, .UserProfile__reviews{
   margin: 5px;
-  flex-basis: 50%;
   min-width: 200px;
-  max-width: 450px;
+  max-width: 480px;
+  flex-basis: 50%;
+}
+
+.UserProfile__reviews {
+  flex-grow: 2;
 }

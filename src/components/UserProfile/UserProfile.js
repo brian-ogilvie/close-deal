@@ -30,6 +30,12 @@ class UserProfile extends React.Component {
     this.getUserData()
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.userId !== this.props.userId) {
+      this.getUserData()
+    }
+  }
+
   render() {
     const user = this.state.user
     if (user) {
