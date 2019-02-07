@@ -65,6 +65,36 @@ app.post('/products', async (req, res) => {
   }
 });
 
+app.put('/products/:id', async (req, res) => {
+  try {
+    const id = req.params.id
+    const updateProduct = {
+      name: req.body.name,
+      description: req.body.description,
+      price: req.body.price,
+      image_url: req.body.image_url
+    };
+    const product = await Product.update(updateProduct, { where: {id: id} })
+    res.json(product)
+  } catch(e) {
+    console.error(e)
+    res.status(500).json({message: e.message})
+  }
+})
+
+app.delete('/products/:id', async (req, res) => {
+  try {
+    const id = req.params.id;
+
+    await Product.destroy({ where: {id: id} });
+    res.sendStatus(204)
+  } catch (e) {
+    console.error(e);
+    res.status(500).json({ message: e.message});
+  }
+});
+
+
 app.post('/users/login', async (req, res) => {
   const invalidMsg = 'Invalid email or password'
   try {
