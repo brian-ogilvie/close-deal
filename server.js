@@ -21,7 +21,7 @@ app.get('/products', async(req,res) => {
       limit: 20,
       attributes: ['id','name','price','image_url', 'description', 'created_at','user_id'],
       include: [
-        {model: User, as: 'sold_by', attributes: ['id'], 
+        {model: User, as: 'sold_by', attributes: ['id'],
           include: [
             {model: Review, as: 'subject_of_reviews',
               attributes: ['stars']
