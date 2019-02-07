@@ -36,7 +36,7 @@ class ProductDetail extends Component {
     this.getData()
   }
 
-  deleteProduct = () => {
+  showDeleteButton = () => {
     if(this.state.userIsSeller){
       console.log(this.props)
       return (
@@ -62,7 +62,7 @@ class ProductDetail extends Component {
 
     return(
       <div className="ProductDetail__container">
-        {this.deleteProduct()}
+        {this.showDeleteButton()}
         <div className="ProductDetail__details-container">
           <div className="ProductDetail__image-wrapper">
             <img className="ProductDetail__image" src={this.state.product.image_url} alt={this.state.product.name}/>
