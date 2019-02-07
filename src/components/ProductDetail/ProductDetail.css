@@ -7,12 +7,21 @@
   background-color: white;
   position: relative;
   z-index: 1;
+  border-radius: 8px;
+}
+
+.Reviews__title {
+  margin-left: 15px;
 }
 
 .ProductDetail__deleteButton {
   position: absolute;
   top: 15px;
   right: 15px;
+}
+
+.ProductDetail__postedOn {
+  color: dimgrey;
 }
 
 .ProductDetail__details-container {
@@ -26,20 +35,36 @@
 .ProductDetail__image {
   flex: 1;
   margin: 10px;
-  border: solid black 2px;
   background-size: cover;
   width: 100%;
 }
 
 .ProductDetail__info-container {
   flex: 1;
-  border: solid black 2px;
   padding: 10px;
   margin: 10px;
 }
 
 .ProductDetail__review-container {
   flex: 1;
-  border: solid black 2px;
   margin: 10px;
+}
+
+.ProductDetail__info-heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.productDetail__name {
+  flex: 2;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.productDetail__price {
+  flex: 1;
+  text-align: right;
+  color: dimgray;
+  margin-top: 0;
+  margin-bottom: 0;
 }
