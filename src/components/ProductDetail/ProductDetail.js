@@ -19,9 +19,7 @@ class ProductDetail extends Component {
     try {
       const res = await axios.get(url)
       const product = res.data
-      if(this.props.user  && product.sold_by.id === this.props.user.id ){
-        console.log(product) 
-        console.log(this.props)
+      if(this.props.user  && product.sold_by.id === this.props.user.id ){\
         await this.setState({
           userIsSeller: true
         })
@@ -38,7 +36,6 @@ class ProductDetail extends Component {
 
   showDeleteButton = () => {
     if(this.state.userIsSeller){
-      console.log(this.props)
       return (
         <button className="ProductDetail__deleteButton" 
         onClick={()=> this.onProductDelete(this.state.product)}>Delete</button>
