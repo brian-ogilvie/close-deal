@@ -3,6 +3,7 @@ import axios from 'axios'
 import "./ProductDetail.css"
 import Review from '../Review/Review'
 import {Redirect} from 'react-router-dom'
+const moment = require('moment')
 
 class ProductDetail extends Component {
   constructor(props) {
@@ -66,7 +67,7 @@ class ProductDetail extends Component {
   }
 
   render() {
-
+    const userData = this.state.product
     const seller = this.state.product.sold_by ? this.state.product.sold_by : {first_name: '', last_name: ''}
     const reviewsOnSeller = this.state.product.sold_by ? this.state.product.sold_by.subject_of_reviews.map(review => {
       return <Review key={review.id} review={review} />
@@ -88,13 +89,17 @@ class ProductDetail extends Component {
             <img className="ProductDetail__image" src={this.state.product.image_url} alt={this.state.product.name}/>
           </div>
           <div className="ProductDetail__info-container">
-            <h2>Seller: {seller.first_name}</h2>
-            <h2>{this.state.product.name}</h2>
-            <h2>${this.state.product.price}</h2>
-            <p>{this.state.product.description}</p>
+            <div className="ProductDetail__info-heading">
+              <h2 className="productDetail__name">{this.state.product.name}</h2>
+              <h2 className="productDetail__price">${this.state.product.price}</h2>
+            </div>
+            <h3>Seller: {seller.first_name} {seller.last_name}</h3>
+            <h4 className="ProductDetail__postedOn">Posted on: {moment(userData.created_at).format('LLLL')}</h4>
+            <p>Description: {this.state.product.description}</p>
           </div>
         </div>
         <div className="ProductDetail__review-container">
+          <h3 className="Reviews__title">Reviews:</h3>
           {reviewsOnSeller}
         </div>
       </div>
