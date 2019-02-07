@@ -75,7 +75,7 @@ app.put('/products/:id', async (req, res) => {
       image_url: req.body.image_url
     };
     const product = await Product.update(updateProduct, { where: {id: id} })
-    res.json(building)
+    res.json(product)
   } catch(e) {
     console.error(e)
     res.status(500).json({message: e.message})
