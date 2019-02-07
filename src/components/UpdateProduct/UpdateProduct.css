@@ -1,0 +1,29 @@
+.UpdateProduct__wrapper{
+  width: 75%;
+  margin: 0 auto;
+  background-color: white;
+  border: 1px solid gray;
+}
+
+.UpdateProduct__field{
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}
+
+.UpdateProduct__submit{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  padding: 25px;
+}
+
+.UpdateProduct__label {
+  display: inline-block;
+  width: 140px;
+  text-align: right;
+}
+
+.UpdateProduct__textarea {
+  resize: none;
+}

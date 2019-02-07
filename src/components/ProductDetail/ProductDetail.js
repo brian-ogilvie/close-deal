@@ -11,6 +11,7 @@ class ProductDetail extends Component {
     this.state = {
       product: {},
       isDeleted: false,
+      willEdit: false,
       userIsSeller: false
     }
     this.getData = this.getData.bind(this)
@@ -36,20 +37,33 @@ class ProductDetail extends Component {
     this.getData()
   }
 
-  showDeleteButton = () => {
-    if(this.state.userIsSeller){
-      return (
-        <button className="ProductDetail__deleteButton"
-        onClick={()=> this.onProductDelete(this.state.product)}>Delete</button>
-      )
-    } else {
-      return null
+  componentDidUpdate(prevProps){
+    if(this.props !== prevProps){
+      if(this.props.user  && this.state.product.sold_by.id === this.props.user.id ){
+        this.setState({userIsSeller: true})
+      }
     }
   }
+
   onProductDelete = (product) => {
     axios.delete(`/products/${product.id}`)
       .then(res=>alert(`Product with id ${product.id} deleted`))
       .then(this.setState({isDeleted:true}))
+  }
+
+  showSellerButtons = () => {
+    if(this.state.userIsSeller){
+      return (
+        <div>
+          <button className="ProductDetail__editButton"
+          onClick={()=>this.setState({willEdit:true})}>Edit</button>
+          <button className="ProductDetail__deleteButton"
+          onClick={()=> this.onProductDelete(this.state.product)}>Delete</button>
+        </div>
+      )
+    } else {
+      return null
+    }
   }
 
   render() {
@@ -63,10 +77,14 @@ class ProductDetail extends Component {
       return <Redirect to={'/products/'} />
     }
 
+    if(this.state.willEdit === true){
+      return <Redirect to={`/update-product/${this.state.product.id}`}/> 
+    }
+
     return(
       <div className="ProductDetail__container">
-        {this.showDeleteButton()}
         <div className="ProductDetail__details-container">
+          {this.showSellerButtons()}
           <div className="ProductDetail__image-wrapper">
             <img className="ProductDetail__image" src={this.state.product.image_url} alt={this.state.product.name}/>
           </div>

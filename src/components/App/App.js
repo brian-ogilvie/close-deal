@@ -7,6 +7,7 @@ import Header from '../Header/Header'
 import ProductsList from '../ProductsList/ProductsList'
 import Login from '../Login/Login'
 import SellProduct from '../SellProduct/SellProduct'
+import UpdateProduct from '../UpdateProduct/UpdateProduct'
 import UserProfile from '../UserProfile/UserProfile'
 
 class App extends Component {
@@ -87,6 +88,14 @@ class App extends Component {
             <Route path='/profile' render={() => {
               if (this.state.user) {
                 return <UserProfile userId={this.state.user.id} currentUser={this.state.user} />
+              } else {
+                this.showLogin()
+                return <Redirect to='/products' />
+              }
+            }} />
+            <Route path='/update-product/:id' exact render={(props)=> {
+              if(this.state.user){
+                return <UpdateProduct id={props.match.params.id} user={this.state.user} />
               } else {
                 this.showLogin()
                 return <Redirect to='/products' />
