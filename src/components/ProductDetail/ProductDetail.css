@@ -5,6 +5,14 @@
   width: 100%;
   height: 100%;
   background-color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.ProductDetail__deleteButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
 }
 
 .ProductDetail__details-container {
