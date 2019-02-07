@@ -86,8 +86,8 @@ app.delete('/products/:id', async (req, res) => {
   try {
     const id = req.params.id;
 
-    const product = await Product.destroy({ where: {id: id} });
-    res.json(product);
+    await Product.destroy({ where: {id: id} });
+    res.sendStatus(204)
   } catch (e) {
     console.error(e);
     res.status(500).json({ message: e.message});
