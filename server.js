@@ -114,7 +114,7 @@ app.post('/users/register', async (req, res) => {
 app.get('/users/:id', async (req, res) => {
   try {
     const user = await User.findByPk(req.params.id, {
-      exclude: ['password'],
+      attributes: { exclude: ['password'] },
       include: [
         {
           model: Review, as: 'subject_of_reviews',
@@ -128,7 +128,7 @@ app.get('/users/:id', async (req, res) => {
         {
           model: Product
         }
-      ]
+      ],
     })
     res.json(user)
   } catch (e) {

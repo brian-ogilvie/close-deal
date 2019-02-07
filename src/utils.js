@@ -4,4 +4,14 @@ const getAverage = (arr, decPlaces) => {
     }, 0) / arr.length).toFixed(decPlaces)
 }
 
-module.exports = { getAverage }
+const months = 'January, February, March, April, May, June, July, August, September, October, November, December'.split(', ')
+
+const parseDate = str => {
+  const date = new Date(str)
+  const month = months[date.getMonth()]
+  const day = date.getDate()
+  const year = date.getFullYear()
+  return `${month} ${day}, ${year}`
+}
+
+module.exports = { getAverage, parseDate }

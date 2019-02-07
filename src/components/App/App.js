@@ -39,7 +39,6 @@ class App extends Component {
   }
 
   async closeLogin(requester) {
-    console.log('requester:', requester)
     await this.setState({loginLeaving: true})
     setTimeout(async () => {
       await this.setState({
@@ -85,7 +84,14 @@ class App extends Component {
                 return <Redirect to='/products' />
               }
             }} />
-            <Route path='/profile' component={ ProductsList }/>
+            <Route path='/profile' render={() => {
+              if (this.state.user) {
+                return <UserProfile userId={this.state.user.id} currentUser={this.state.user} />
+              } else {
+                this.showLogin()
+                return <Redirect to='/products' />
+              }
+            }}/>
           </Switch>
         </main>
       </div>
