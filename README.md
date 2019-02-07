@@ -2,7 +2,7 @@
 The CloseDeal is a clone of Etsy, or LetGo, where users can post items for sale, browse other products for sale by users, post reviews on products, and add products to their shopping cart.
 
 ## Deployed App
-[CloseDeal](http://doesntworkyet.com)
+[CloseDeal](https://close-deal-app.herokuapp.com/)
 
 ## To Contribute to Our Project
 
