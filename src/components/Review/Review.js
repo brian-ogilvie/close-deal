@@ -5,7 +5,6 @@ const Review = ({review}) => {
 		<div className='Review__wrapper'>
 			{review.poster.first_name}
 			{review.created_at.slice(0,10)}
-
 			{review.comment}
 		</div>
 	)

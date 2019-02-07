@@ -2,6 +2,15 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import "./ProductDetail.css"
 import Review from '../Review/Review'
+const moment = require('moment');
+
+
+const today = '2019-02-06'
+const format = 'LLLL'
+const result = moment(today).format(format)
+console.log(result);
+
+moment().subtract(6, 'today').calendar();
 
 class ProductDetail extends Component {
   constructor() {
@@ -17,6 +26,7 @@ class ProductDetail extends Component {
     try {
       const res = await axios.get(url)
       const product = res.data
+      console.log(product);
       this.setState({
         product
       })
