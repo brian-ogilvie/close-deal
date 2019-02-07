@@ -5,8 +5,6 @@ import Review from '../Review/Review'
 import {Redirect} from 'react-router-dom'
 const moment = require('moment')
 
-
-
 class ProductDetail extends Component {
   constructor(props) {
     super(props)
