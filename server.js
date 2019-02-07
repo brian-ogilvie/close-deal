@@ -2,10 +2,12 @@ const express = require('express')
 const PORT = process.env.PORT || 5000
 const bodyParser = require('body-parser')
 const bcrypt = require('bcrypt')
+const morgan = require('morgan')
 
 const app = express()
 
 app.use(bodyParser.json())
+app.use(morgan('dev'))
 
 const { User, Product, Review, Transaction } = require('./models')
 

@@ -34,6 +34,7 @@ View our Kanban board on Trello [here](https://trello.com/b/Kokd8Ev1/project-3)
 
 #### Back-End
 - Express
+- Morgan
 - body-parser
 - pg & pg-hstore
 - bcrypt
