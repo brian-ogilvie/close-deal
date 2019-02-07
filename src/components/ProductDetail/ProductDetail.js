@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import "./ProductDetail.css"
 import Review from '../Review/Review'
-import {Link,Redirect} from 'react-router-dom'
+import {Redirect} from 'react-router-dom'
 
 class ProductDetail extends Component {
   constructor(props) {
@@ -10,6 +10,7 @@ class ProductDetail extends Component {
     this.state = {
       product: {},
       isDeleted: false,
+      willEdit: false,
       userIsSeller: false
     }
     this.getData = this.getData.bind(this)
@@ -41,16 +42,12 @@ class ProductDetail extends Component {
       .then(this.setState({isDeleted:true}))
   }
 
-  onEditButtonClick = () => {
-    return <Redirect to={`/update-product/${this.state.product.id}`}/>
-  }
-
   showSellerButtons = () => {
     if(this.state.userIsSeller){
       return (
         <div>
           <button className="ProductDetail__editButton"
-          onClick={()=>this.onEditButtonClick}>Edit</button>
+          onClick={()=>this.setState({willEdit:true})}>Edit</button>
           <button className="ProductDetail__deleteButton"
           onClick={()=> this.onProductDelete(this.state.product)}>Delete</button>
         </div>
@@ -69,6 +66,10 @@ class ProductDetail extends Component {
 
     if(this.state.isDeleted === true){
       return <Redirect to={'/products/'} />
+    }
+
+    if(this.state.willEdit === true){
+      return <Redirect to={`/update-product/${this.state.product.id}`}/> 
     }
 
     return(

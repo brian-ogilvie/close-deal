@@ -15,6 +15,12 @@
   right: 15px;
 }
 
+.ProductDetail__editButton {
+  position: absolute;
+  top: 15px;
+  right: 75px;
+}
+
 .ProductDetail__details-container {
   display: flex;
 }
