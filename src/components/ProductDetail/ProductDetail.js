@@ -36,6 +36,14 @@ class ProductDetail extends Component {
     this.getData()
   }
 
+  componentDidUpdate(prevProps){
+    if(this.props !== prevProps){
+      if(this.props.user  && this.state.product.sold_by.id === this.props.user.id ){
+        this.setState({userIsSeller: true})
+      }
+    }
+  }
+
   onProductDelete = (product) => {
     axios.delete(`/products/${product.id}`)
       .then(res=>alert(`Product with id ${product.id} deleted`))
