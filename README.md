@@ -23,7 +23,7 @@ View our Kanban board on Trello [here](https://trello.com/b/Kokd8Ev1/project-3)
 
 ### Database Schema
 <details><summary>ERD from LucidChart.com</summary>
-<img src="https://res.cloudinary.com/brian-ogilvie/image/upload/v1549293157/Project%203/Entity_Relational_Diagram.png" alt="ERD">
+<img src="https://res.cloudinary.com/brian-ogilvie/image/upload/v1549583897/Project%203/Entity%20Relational%20Diagram.png" alt="ERD">
 </details>
 
 ### Component Hierarchy
