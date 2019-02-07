@@ -2,14 +2,14 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import "./ProductDetail.css"
 import Review from '../Review/Review'
-import {Redirect} from 'react-router-dom'
 
 class ProductDetail extends Component {
   constructor(props) {
     super(props)
     this.state = {
       product: {},
-      isDeleted: false
+      isDeleted: false,
+      userIsSeller: false
     }
     this.getData = this.getData.bind(this)
   }
@@ -19,9 +19,14 @@ class ProductDetail extends Component {
     try {
       const res = await axios.get(url)
       const product = res.data
-      this.setState({
-        product
-      })
+      if(this.props.user  && product.sold_by.id === this.props.user.id ){
+        console.log(product) 
+        console.log(this.props)
+        await this.setState({
+          userIsSeller: true
+        })
+      }
+      this.setState({product})
     } catch (e) {
       console.log(e.message);
     }
@@ -32,7 +37,8 @@ class ProductDetail extends Component {
   }
 
   deleteProduct = () => {
-    if(this.props.user && this.props.user.id === this.state.product.sold_by.id){
+    if(this.state.userIsSeller){
+      console.log(this.props)
       return (
         <button className="ProductDetail__deleteButton" 
         onClick={()=> this.onProductDelete(this.state.product)}>Delete</button>
