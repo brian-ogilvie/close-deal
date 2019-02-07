@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import "./ProductDetail.css"
 import Review from '../Review/Review'
-import {Redirect} from 'react-router-dom'
+import {Link,Redirect} from 'react-router-dom'
 
 class ProductDetail extends Component {
   constructor(props) {
@@ -35,20 +35,29 @@ class ProductDetail extends Component {
     this.getData()
   }
 
-  showDeleteButton = () => {
-    if(this.state.userIsSeller){
-      return (
-        <button className="ProductDetail__deleteButton"
-        onClick={()=> this.onProductDelete(this.state.product)}>Delete</button>
-      )
-    } else {
-      return null
-    }
-  }
   onProductDelete = (product) => {
     axios.delete(`/products/${product.id}`)
       .then(res=>alert(`Product with id ${product.id} deleted`))
       .then(this.setState({isDeleted:true}))
+  }
+
+  onEditButtonClick = () => {
+    return <Redirect to={`/update-product/${this.state.product.id}`}/>
+  }
+
+  showSellerButtons = () => {
+    if(this.state.userIsSeller){
+      return (
+        <div>
+          <button className="ProductDetail__editButton"
+          onClick={()=>this.onEditButtonClick}>Edit</button>
+          <button className="ProductDetail__deleteButton"
+          onClick={()=> this.onProductDelete(this.state.product)}>Delete</button>
+        </div>
+      )
+    } else {
+      return null
+    }
   }
 
   render() {
@@ -64,8 +73,8 @@ class ProductDetail extends Component {
 
     return(
       <div className="ProductDetail__container">
-        {this.showDeleteButton()}
         <div className="ProductDetail__details-container">
+          {this.showSellerButtons()}
           <div className="ProductDetail__image-wrapper">
             <img className="ProductDetail__image" src={this.state.product.image_url} alt={this.state.product.name}/>
           </div>

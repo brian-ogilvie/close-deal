@@ -7,6 +7,7 @@ import Header from '../Header/Header'
 import ProductsList from '../ProductsList/ProductsList'
 import Login from '../Login/Login'
 import SellProduct from '../SellProduct/SellProduct'
+import UpdateProduct from '../UpdateProduct/UpdateProduct'
 
 class App extends Component {
   constructor() {
@@ -74,6 +75,7 @@ class App extends Component {
               }
             }} />
             <Route path='/profile' component={ ProductsList }/>
+            <Route path='/update-product/:id' component={UpdateProduct} />
           </Switch>
         </main>
       </div>
