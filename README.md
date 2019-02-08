@@ -44,6 +44,7 @@ View our Kanban board on Trello [here](https://trello.com/b/Kokd8Ev1/project-3)
 - react & react-dom
 - react-router-dom
 - axios
+- moment
 
 #### Back-End
 - Express
