@@ -38,3 +38,7 @@
 .Review__seller-link:hover {
   border-bottom: 1px solid #e66465;
 }
+
+.Review__comment {
+  display: inline;
+}

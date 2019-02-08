@@ -6,3 +6,7 @@
 .Stars--small {
   font-size: 14px;
 }
+
+.Stars--inline {
+  margin-right: 5px;
+}
