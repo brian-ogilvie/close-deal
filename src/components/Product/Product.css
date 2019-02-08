@@ -8,6 +8,7 @@
   transition: all .3s;
   position: relative;
   z-index: 1;
+  animation: fade-in .3s linear;
 }
 
 .Product:hover {
