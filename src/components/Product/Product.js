@@ -2,21 +2,12 @@ import React from "react"
 import "./Product.css"
 import { Link } from "react-router-dom"
 import Stars from '../Stars/Stars'
+import {getAverage} from '../../utils'
 
 const Product = ({product}) => {
-const imageInlineStyle = {backgroundImage:`url(${product.image_url})`}
+  const imageInlineStyle = {backgroundImage:`url(${product.image_url})`}
 
-  function averageRatings(reviews) {
-    return ((reviews.map(review => {
-      return Number(review.stars)
-    })
-    .reduce((acc, curr) => {
-      return acc + curr
-    }))/reviews.length)
-    .toFixed(1)
-  }
-
-  const avg_stars = averageRatings(product.sold_by.subject_of_reviews)
+  const avg_stars = getAverage(product.sold_by.subject_of_reviews, 1)
 
   return(
       <div className="Product">
