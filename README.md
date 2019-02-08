@@ -65,3 +65,6 @@ View our Kanban board on Trello [here](https://trello.com/b/Kokd8Ev1/project-3)
 
 ### Dev Dependencies
 - Nodemon
+
+## Acknowledgements
+User authentication was made possible by MANY tutorials, most noteably [this one](https://blog.bitsrc.io/build-a-login-auth-app-with-mern-stack-part-1-c405048e3669) by Rishi Prasad on Medium.
