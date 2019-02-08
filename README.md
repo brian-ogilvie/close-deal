@@ -36,7 +36,7 @@ View our Kanban board on Trello [here](https://trello.com/b/Kokd8Ev1/project-3)
 
 ### Component Hierarchy
 <details><summary>Component Wireframe from LucidChart.com</summary>
-<img src="https://res.cloudinary.com/brian-ogilvie/image/upload/v1549522953/Project%203/Component%20Hierarchy.png" alt="hierarchy">
+<img src="https://res.cloudinary.com/brian-ogilvie/image/upload/v1549634150/Project%203/Screen_Shot_2019-02-08_at_8.54.53_AM.png" alt="hierarchy">
 </details>
 
 ### Dependencies
