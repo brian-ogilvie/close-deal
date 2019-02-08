@@ -38,7 +38,7 @@
   padding-bottom: 10px;
   text-align: center;
   width: 60%;
-  border-bottom: 1px solid #FB3640;
+  border-bottom: 2px solid #9198e5;
 }
 
 .Login__form {
@@ -75,7 +75,7 @@
 }
 
 .Login__submit {
-  background-color: #FB3640;
+  background-color: #9198e5;
   margin-bottom: 15px;
 }
 

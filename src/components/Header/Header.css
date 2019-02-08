@@ -22,7 +22,7 @@ header {
 .Header__logo {
   margin: 0;
   font-size: 2.5rem;
-  background: linear-gradient(#eee, #333);
+  background: linear-gradient(#e66465, #9198e5);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
