@@ -9,6 +9,7 @@ import Login from '../Login/Login'
 import SellProduct from '../SellProduct/SellProduct'
 import UpdateProduct from '../UpdateProduct/UpdateProduct'
 import UserProfile from '../UserProfile/UserProfile'
+import Footer from '../Footer/Footer'
 
 class App extends Component {
   constructor() {
@@ -103,6 +104,7 @@ class App extends Component {
             }}/>
           </Switch>
         </main>
+        <Footer />
       </div>
     );
   }
