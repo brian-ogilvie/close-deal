@@ -21,6 +21,14 @@ View our Kanban board on Trello [here](https://trello.com/b/Kokd8Ev1/project-3)
     - <code>npm start</code>
 - Get to coding!
 
+### Wireframes
+<details><summary>Landing Page</summary>
+<img src="https://res.cloudinary.com/brian-ogilvie/image/upload/v1549592574/Project%203/Wireframe--Landing%20Page.png" alt="landing page">
+</details>
+<details><summary>Product Detail Page</summary>
+<img src="https://res.cloudinary.com/brian-ogilvie/image/upload/v1549592630/Project%203/Wireframe--Product%20Detail.png" alt="product detail">
+</details>
+
 ### Database Schema
 <details><summary>ERD from LucidChart.com</summary>
 <img src="https://res.cloudinary.com/brian-ogilvie/image/upload/v1549583897/Project%203/Entity%20Relational%20Diagram.png" alt="ERD">
