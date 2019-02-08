@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import "./ProductDetail.css"
 import Review from '../Review/Review'
-import {Redirect} from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 const moment = require('moment')
 
 class ProductDetail extends Component {
@@ -93,7 +93,7 @@ class ProductDetail extends Component {
               <h2 className="productDetail__name">{this.state.product.name}</h2>
               <h2 className="productDetail__price">${this.state.product.price}</h2>
             </div>
-            <h3>Seller: {seller.first_name} {seller.last_name}</h3>
+            <h3>Seller: <Link className="ProductDetail__seller-link" to={`/seller/${seller.id}`}>{seller.first_name} {seller.last_name}</Link></h3>
             <h4 className="ProductDetail__postedOn">Posted on: {moment(userData.created_at).format('LLLL')}</h4>
             <p>Description: {this.state.product.description}</p>
           </div>
