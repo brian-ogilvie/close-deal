@@ -5,17 +5,20 @@ const Stars = ({stars, size, inline}) => {
   let starsClassName = 'Stars'
   if (size) {starsClassName += ` Stars--${size}`}
   if (inline) {starsClassName += ` Stars--${inline}`}
-  let allStars = ''
-  for (let i = 1; i<=5; i++) {
-    if (i<=Math.round(Number(stars))) {
-      allStars += '⭐️'
-    } else {
-      allStars += '✪'
+  const lastGoldStar = Math.round(Number(stars))
+  let goldStars = ''
+  for (let i = 1; i <= lastGoldStar; i ++) {
+    goldStars += '⭐️'
+  }
+  let blackStars = ''
+  if (lastGoldStar < 5) {
+    for (let i = 1; i <= 5 - lastGoldStar; i++) {
+      blackStars += '✪'
     }
   }
   return (
     <div className={starsClassName}>
-      {allStars}
+      {goldStars}<span className="Stars__black">{blackStars}</span>
     </div>
   )
 }

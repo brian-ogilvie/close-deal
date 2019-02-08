@@ -10,3 +10,7 @@
 .Stars--inline {
   margin-right: 5px;
 }
+
+.Stars__black {
+  letter-spacing: .2em;
+}
