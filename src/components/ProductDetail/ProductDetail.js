@@ -91,7 +91,7 @@ class ProductDetail extends Component {
           <div className="ProductDetail__info-container">
             <div className="ProductDetail__info-heading">
               <h2 className="productDetail__name">{this.state.product.name}</h2>
-              <h2 className="productDetail__price">${this.state.product.price}</h2>
+              <h2 className="productDetail__price">${this.state.product.price ? this.state.product.price.toFixed(2) : null}</h2>
             </div>
             <h3>Seller: <Link className="ProductDetail__seller-link" to={`/seller/${seller.id}`}>{seller.first_name} {seller.last_name}</Link></h3>
             <h4 className="ProductDetail__postedOn">Posted on: {moment(userData.created_at).format('LLLL')}</h4>
