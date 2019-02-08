@@ -3,6 +3,7 @@
   margin: 10px;
   padding: 10px 20px;
   background-color: #FFFBFE;
+  animation: fade-in .3s linear;
 }
 
 .Review__top-wrapper {

@@ -3,7 +3,8 @@ const Op = Sequelize.Op
 const bcrypt = require('bcrypt')
 const saltRounds = 14
 
-const db = new Sequelize(process.env.DATABASE_URL || 'postgres://localhost:5000/shopping_app_db', {
+// const db = new Sequelize(process.env.DATABASE_URL || 'postgres://localhost:5000/shopping_app_db', {
+  const db = new Sequelize({database: 'shopping_app_db',
   dialect: 'postgres',
   define: {
     underscored: true

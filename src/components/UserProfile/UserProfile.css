@@ -1,5 +1,6 @@
 .UserProfile {
   position: relative;
+  animation: fade-in .3s linear;
 }
 
 .UserProfile__top-line {
