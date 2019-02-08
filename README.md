@@ -50,8 +50,14 @@ View our Kanban board on Trello [here](https://trello.com/b/Kokd8Ev1/project-3)
 - Morgan
 - body-parser
 - pg & pg-hstore
-- bcrypt
 - sequelize
+
+#### Back-End Authentication
+- bcrypt
+- passport
+- passport-jwt
+- jsonwebtoken
+- jwt-decode
 
 #### Misc
 - Concurrently
