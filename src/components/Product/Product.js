@@ -7,7 +7,9 @@ import {getAverage} from '../../utils'
 const Product = ({product}) => {
   const imageInlineStyle = {backgroundImage:`url(${product.image_url})`}
 
-  const avg_stars = getAverage(product.sold_by.subject_of_reviews, 1)
+  const avg_stars = getAverage(product.sold_by.subject_of_reviews.map(review => {
+    return review.stars
+  }), 1)
 
   return(
       <div className="Product">
