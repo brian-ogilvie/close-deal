@@ -1,5 +1,5 @@
 const getAverage = (arr, decPlaces) => {
-  if (arr.length === 0) {return 0;}
+  if (arr.length === 0 || arr.some(el => isNaN(Number(el)))) {return 0;}
   return (arr.reduce((acc, curr) => {
       return acc + Number(curr)
     }, 0) / arr.length).toFixed(decPlaces)
